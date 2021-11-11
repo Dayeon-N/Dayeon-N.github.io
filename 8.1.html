@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>8.1 Physical Security</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+    <style>
+
+        body {
+            overflow-y: scroll; 
+            height: 200%;
+        }
+
+        .split {
+            height: 100%; 
+            width: 510px; 
+            position: absolute; 
+            overflow-x: hidden;
+            padding-top: 20px
+          }
+
+          .left {
+            left: 80px; 
+            background-color: #7976a8; 
+          }
+
+          .right {
+            right: 100px; 
+            background-color: #d9d8ec; 
+          }
+
+          .centered {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%,-50%);
+            text-align: center; 
+          }
+
+          .centered:hover{
+            background-color: #c1a8ff;
+            color: #5E604F
+          }
+
+          .centered:hover a{
+            background-color: #c1a8ff;
+            color: #1e1f1b
+          }
+
+          .centered img {
+            width: 150px; 
+            border-radius: 20%; 
+          }
+
+          .other {
+            position: absolute;
+            top: 800px; 
+            margin-bottom: 30px; 
+            padding-bottom: 30px;
+          }
+
+          #other-i {
+            top: 750px; 
+            text-align: left; 
+            position: absolute;
+
+          }
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 500px) {
+            .split {
+              width: 100%;
+            }
+          }
+            /* Clear floats after the columns */
+            .split:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+
+            .card3 {
+                margin: 30px; 
+                padding: 5px; 
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8; 
+                line-height: 25px; 
+                position: relative; 
+                float: center; 
+                top: 600px; 
+                left: 0;
+                right: 0; 
+            }
+
+            #bt {
+                position: relative;
+                top: 600px; 
+            }
+    </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a class = "active" href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2">
+            <h1 class = "heading">CHAPTER 8.1: PHYSICAL SECURITY</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+            <br>
+            <div class="split left">
+                <div class="centered">
+                  <a href = "healthaspects.html" style = "color: #d9d8ec"><img src="images/health.png" alt="heart"></a>
+                  <h2><a href = "healthaspects.html" style = "color:#d9d8ec">Health Aspects</a></h2>
+                  <p><a href = "healthaspects.html" style = "color:#d9d8ec"> Click here to look at the potential health problems</a></p>
+                </div>
+              </div>
+              <div class="split right">
+                <div class="centered">
+                  <a href = "safetyaspects.html" style = "color: #7976a8"><img src="images/safety.png" alt="safety"></a>
+                  <h2><a href = "safetyaspects.html" style = "color:#7976a8">Safety Aspects</a></h2>
+                  <p><a href = "safetyaspects.html" style = "color:#7976a8">Click here to look at the potential safety risks</a></p>
+                </div>
+              </div>
+
+              <div class = "card3">
+                <h3 id = "card-t3">Other safety rules needed to be carried out</h3>
+                <p id = "card-c3">              
+                    <ul class = "list1">
+                        <li>Check the state of wires/cables and plugs</li>
+                        <li>Make sure drinks are away from the computer</li>
+                        <li>Fix wires along walls and behind desks</li>
+                        <li>Do not cover computers with paper or fabric</li>
+                        <li>Don't plug too many devices into an electric outlet socket - to reduce the risk of fire</li>
+                        <li>Exercise every hour</li>
+                        <li>Carry out an 'ergonomic assessment'</li>
+                    </ul>
+                </p>
+                </div>
+                <br>
+                <a href="8.2.html" class="button" id = "bt">&#8250;</a>
+                <a href="chapter8home.html" class="button2"  id = "bt">&#8249;</a>
+                <hr style = "position: relative; top: 650px; color: transparent;">
+                <br>
+                <br>
+        </body>
+    </main>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>7.1 Analysis</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+
+        <style>
+            .steps ul li {
+                list-style-type: upper-roman;
+            }
+
+            .steps {
+                margin-bottom: 30px;
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8;           
+                padding: 5px; 
+                margin-left: 50px; 
+                margin-right: 50px; 
+            }
+
+            .steps ul {
+                margin-left: 30px; 
+            }
+
+            body {
+                overflow-y: scroll; 
+            }
+
+            .fact {
+                margin-bottom: 30px;
+                margin-left: 50px; 
+                margin-right: 50px; 
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8;          
+                padding: 5px; 
+            }
+
+            .fact ul {
+                margin-left: 30px; 
+            }
+
+            * {
+                box-sizing: border-box; 
+            }
+
+            /* Float four columns side by side */ 
+            .column {
+                float: left; 
+                width: 50%;
+                padding: 0 10px;
+            }
+
+            /* Remove extra left and right margins, due to padding in columns */
+            .row {margin: 0 -5px;}
+
+            /* Clear floats after the columns */
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            /* Style the counter cards */
+            .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+            padding: 16px;
+            text-align: center;
+            background-color: whitesmoke;
+            }
+
+            /* Responsive columns - one column layout (vertical) on small screens */
+            @media screen and (max-width: 500px) {
+            .column {
+                width: 100%;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+            }
+
+            .table {
+            border: 1px solid #7976a8; 
+            border-collapse: collapse; 
+            font-size: 15px;
+            }
+
+            th, td {
+            padding: 10px; 
+            }  
+
+            th {
+            background-color: #c4c3e4;
+            color: black;
+            }
+
+            td {
+                text-align: left; 
+                padding: 5px; 
+                line-height: 25px; 
+            }
+
+            table, th, td {
+            border: 1px solid black;
+            }
+
+            .dfd {
+                margin: 30px 100px 30px ;
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8;          
+                padding: 5px; 
+            }
+
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a class = "active" href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2"  id = "top">
+            <h1 class = "heading">CHAPTER 7.1: ANALYSIS</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+            
+            <div class = "card">
+            <h3 id = "card-t">What is Analysis Stage?</h3>
+            <p id = "card-c" style = "text-align: center;"> Analysis: stage of collecting information about the present system and identifying problems</p>
+            </div>
+            
+            <div class = "steps">
+            <h3>Steps in the Analysis Stage</h3> 
+                <ul style = "padding: 10px; top:100px; line-height: 30px; ">
+                    <li>Fact-finding/collecting data from the current system</li>
+                    <li>Description of the current system - establishing the inputs, outputs, and processing being done</li>
+                    <li>Identification of the problems with the current system</li>
+                    <li>Agreement of the objectives with the clients</li>
+                    <li>Identify and agree with customer requirements</li>
+                    <li>Interpreting the customer’s requirements</li>
+                    <li>Producing a cost-benefit analysis</li>
+                    <li>Identifying suitable hardware and software</li> 
+                    <li>Producing a data flow diagram</li>
+                </ul> 
+            </div>
+
+            <div class = "fact">
+            <h3>Fact-finding</h3>
+            <p>A variety of fact-finding methods are used to gather information and these are: </p>
+            <ul style = "padding: 10px; top:100px; line-height: 20px;"> 
+                <li>Questionnaires</li>
+                <li>Interviews</li>
+                <li>Observations</li>
+                <li>Examining documents (looking at existing paperwork)</li>
+            </ul>
+            </div>
+
+            <div class = "row">
+                <div class = "column">
+                    <div class = "card"><h4>Observations</h4>
+                        <ul style = "padding: 10px;"><li>Involves watching personnel using the existing system to find out exactly how it works</li></ul>
+                        <table class = "table">
+                            <tr>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px;">
+                                        <li>Obtains reliable data</li>
+                                        <li>Possible to see exactly what is being done</li>
+                                        <li>Relatively inexpensive</li>
+                                    </ul>
+                                </td> 
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px; ">
+                                        <li>People are generally uncomfortable being watched</li>
+                                        <li>If workers perform tasks that violate standard procedures, they may not do this while being watched</li>
+                                    </ul>
+                                </td> 
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class = "column">
+                    <div class = "card"><h4>Interviews</h4>
+                        <ul style = "padding: 10px;"><li>Involves a one-to-one question-and-answer session between the analyst and the employee/customer</li></ul>
+                        <table class = "table">
+                            <tr>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px;">
+                                        <li>Gives opportunity to motivate the interviewee into giving open and honest answers to the analyst’s questions</li>
+                                        <li>Allows the analyst to probe for more feedback from the interviewee - easy to extend a question</li>
+                                        <li>Possible to modify questions</li>
+                                        <li>Able to probe deeply into one specific aspect of the existing system</li>
+                                    </ul>
+                                </td> 
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px; ">
+                                        <li>Time-consuming</li>
+                                        <li>Expensive, due to the use of the analyst’s time</li>
+                                        <li>The interviewee cannot remain anonymous </li>
+                                    </ul>
+                                </td> 
+                            </tr>
+                        </table></div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "column">
+                    <div class = "card"><h4>Looking at existing paperwork</h4>
+                        <ul style = "padding: 10px;"><li>Allows the analyst to see how the paper files are kept, look at operating instructions and training manuals, check the accounts, etc</li></ul>
+                        <table class = "table">
+                            <tr>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px;">
+                                        <li>Allows information to be obtained which was not possible by any of the other methods </li>
+                                        <li>Analysts can see for themselves how the paper system operates </li>
+                                        <li>Allows the analyst to get some idea of the scale of the problem, memory size requirements, type of input/output devices needed </li>
+                                    </ul>
+                                </td> 
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px; ">
+                                        <li>Can be very time-consuming</li>
+                                        <li>Can be relatively expensive because of the analyst’s time</li>
+                                    </ul>
+                                </td> 
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class = "column">
+                    <div class = "card"><h4>Questionnaires</h4>
+                        <ul style = "padding: 10px;"><li>Involves sending out questionnaires to the workforce and/or to customers to find out views of the existing system and find out how some key tasks are carried out</li></ul>
+                        <table class = "table">
+                            <tr>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px;">
+                                        <li>Can be answered quite quickly</li>
+                                        <li>Relatively inexpensive</li>
+                                        <li>Can remain anonymous</li>
+                                        <li>Allows quick analysis of the data</li>
+                                    </ul>
+                                </td> 
+                                <td>
+                                    <ul style = "padding-left: 20px; font-size: 15px; ">
+                                        <li>The number of people who returned questionnaires is low</li>
+                                        <li>Inflexible questions since they have to be generic </li>
+                                        <li>No immediate way to clarify a vague or incomplete answer to a question </li>
+                                    </ul>
+                                </td> 
+                            </tr>
+                        </table></div>
+                </div>
+            </div>
+
+            <div class = "dfd">
+                <h3>Data flow diagram (DFD)</h3> 
+                <ul style = "padding-left: 15px; font-size: 15px; line-height: 25px;">
+                    <li>Help the analyst by showing the data flow, input and output requirements, processing, and the types of data storage needed </li>
+                    <li>It is used to describe: 
+                        <ul style = "padding-left: 15px; font-size: 15px;">
+                            <li>The need to identify inputs, outputs, and processing of the current system</li>
+                            <li>The need to identify problems with the current system</li>
+                            <li>The need to identify the user and information requirements for the new system</li>
+                            <li>System specifications: 
+                                <ul style = "padding-left: 15px; font-size: 15px;">
+                                    <li>Identify and justify suitable hardware for the new system </li>
+                                    <li>Identify and justify new software for the new system</li>
+                                </ul>                            
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a href="7.2.html" class="button">&#8250;</a>
+            <a href="chapter7home.html" class="button2">&#8249;</a>
+        </body>
+    </main>
+</html>

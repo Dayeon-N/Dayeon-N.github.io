@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>7.6 Evaluation</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style>
+            body {
+                overflow-y: scroll;
+            }
+
+            .column {
+            float: left;
+            width: 33%;
+            padding: 0 10px;
+            }
+
+            /* Remove extra left and right margins, due to padding in columns */
+            .row {margin: 0 -5px;}
+
+            /* Clear floats after the columns */
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            /* Style the counter cards */
+            .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+            padding: 16px;
+            text-align: left;
+            background-color: #f1f1f1;
+            }
+
+            /* Responsive columns - one column layout (vertical) on small screens */
+            @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+            }
+
+            .box {
+            position: relative;
+            width: 100%;
+            }
+
+            .image {
+            display: block;
+            width: 100%;
+            height: auto;
+            }
+
+            .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #aa00ba;
+            overflow: hidden;
+            width: 100%;
+            background: cover;
+            height: 0;
+            transition: .5s ease;
+            }
+
+            .box:hover .overlay {
+            height: 100%;
+            }
+
+            .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            }
+
+            .list3 {
+                padding-left: 15px; 
+                font-size: 15px; 
+                list-style-type: lower-roman;
+            }
+
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a class = "active" href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2" id = "top">
+            <h1 class = "heading">CHAPTER 7.6: EVALUATION</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+
+            <div class = "card">
+                <h3 id = "card-t">What is the Evaluation Stage?</h3>
+                <p id = "card-c"> 
+                    <ul class = "list1">
+                        <li>The final stage of the system life cycle </li>
+                        <li>Once a system is up and running, it is necessary to do some evaluation and carry out any maintenance if necessary</li>
+                        <li>List of things considered when evaluating how well the new system has worked, which can ultimately lead to a redesign of part of the system if there is strong evidence to suggest that changes need to be made: 
+                            <ul class = "list2"> 
+                                <li>Compare the final solution with the original task</li>
+                                <li>Identify and limitations of the system </li>
+                                <li>Identify any necessary improvements that need to be made </li>
+                                <li>Evaluate the user’s responses to using the new system</li>
+                                <li>Compare test results from the new system with results from the old system</li>
+                                <li>Compare the performance of the new system with the performance of the old system </li>
+                                <li>Observe users performing set tasks (compare old with new)</li>
+                                <li>Measure the time taken to complete tasks (compare old with new)</li>
+                                <li>Interview users to gather responses about how well the new system works</li>
+                                <li>Give out questionnaires to gather responses about the ease of use of the new system </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="box">
+                            <ul list1 style = "padding-left: 30px;">
+                                <li>To refer back to the requirements specification to see whether the new system has resolved the issues of the previous system and met the requirements stated in the design: 
+                                    <ul class = "list3">
+                                        <li>Compare the solution with the original task requirements</li>
+                                        <li>Identify and limitations and necessary improvements to the system </li>
+                                        <li>Evaluate the users’ responses to the results of testing the system </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                                <div class="overlay">
+                                    <div class="text" style = "font-weight: bold; font-size: 35spx;">Purpose</div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                  <div class="card">
+                    <div class="box">
+                        <ul list1 style = "padding-left: 30px;">
+                            <li>Results from the evaluation lead to two things happening:  
+                                <ul class = "list2">
+                                    <li>Update of hardware because: 
+                                        <ul style = "list-style-type: square; padding-left: 25px; ">
+                                            <li>Of feedback from end-users</li>
+                                            <li>New hardware comes on the market, necessitating a change</li>
+                                            <li>Changes within the company require new devices to be added or updated</li>
+                                        </ul>
+                                    </li>
+                                    <li>Update of software because:
+                                        <ul style = "list-style-type: square; padding-left: 25px; ">
+                                            <li>Of feedback from end-users</li>
+                                            <li>Changes to company structure or how the company works that may require modifications to the software </li>
+                                            <li>Changes in legislation that may require modifications to the software </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                            <div class="overlay">
+                                <div class="text" style = "font-weight: bold; font-size: 35spx;">Results</div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+                <div class="column">
+                  <div class="card">
+                    <div class="box">
+                        <ul list1 style = "padding-left: 30px;">
+                            <li>After the evaluation is complete, if there are any problems or limitations with the system from a technical or user point of view then the system analyst will refer back to the design stage of the systems life cycle</li>
+                            <li>Based on the feedback necessary adjustments could be made to improve the overall efficiency and usability of the new system </li>
+                        </ul>
+                            <div class="overlay">
+                                <div class="text" style = "font-weight: bold; font-size: 35spx;">After Evaluation</div>
+                            </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="chapter8home.html" class="button">&#8250;</a>
+            <a href="7.5.html" class="button2">&#8249;</a>
+        </body>
+    </main>
+</html>

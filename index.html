@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Homepage</title>
+        <link rel ="stylesheet" href = "menu.css">
+
+        <style>
+          section{
+              min-height: 100vh; 
+              background: linear-gradient(#f7cac9, #92a8d1);
+              background-position: center; 
+              background-size: cover; 
+              background-repeat: no-repeat; 
+              transition: 0.5s; 
+              filter: brightness(100%);
+          }
+
+          .title {
+            z-index: 1; 
+            position: absolute; 
+            width: 500px; 
+            height: 340px; 
+            margin: 18% 30%; 
+            text-align: center;
+          }
+
+          .title h1 {
+            text-align: center; 
+            color: #FF8882; 
+            text-transform: uppercase; 
+            font-size: 60px; 
+          }
+
+          .title a {
+            border: 1.5px solid #FF8882;
+            padding: 10px 25px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+            color: palevioletred;
+            background: #FFBCBC;
+          }
+    
+          .title a:hover {
+            background: white;
+            color: salmon;
+          }
+
+          #next:hover {
+            background-color: whitesmoke;
+          }
+
+          #next {
+            background-color: rgb(255, 184, 208);
+          }
+
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li class = "active"><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <div class="title">
+              <h1>IGCSE ICT CHAPTER 7 & 8</h1>
+              <a href = "aboutpage.html" id ="next">To Our About Page</a>
+            </div>
+            <section></section>
+        </body>
+    </main>
+</html>

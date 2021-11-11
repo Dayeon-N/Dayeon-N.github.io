@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>8.3 Security of Data</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style>
+            body {
+                overflow-y: scroll;
+                background-color: #d9d8ec;
+            }
+
+            .vtabs {
+                max-width: 800px; 
+                padding: 20px; 
+                margin: 50px auto; 
+                position: relative; 
+                border: solid 2px #7976a8; 
+                overflow-y: scroll;
+                background-color: whitesmoke; 
+                border-radius: 15px; 
+            }
+
+            .vtabs input {
+                display: none; 
+            }
+
+            .vtabs label {
+                display: block; 
+                width: 20%; 
+                padding: 15px; 
+                color: #a2a2a2; 
+                font-weight: 700; 
+                font-size: 24px; 
+                border-left: 5px solid #dcdcdc; 
+                transition: 0.3s ease;
+            }
+
+
+            .vtabs label:hover {
+                cursor: pointer; 
+                color: #404040; 
+            }
+
+            .vtabs input:checked + label {
+                color: #404040; 
+                border-left: 5px solid #b700ff; 
+            }
+
+            .vtabs #tab1:checked ~ .vtab-content #content1,
+            .vtabs #tab2:checked ~ .vtab-content #content2,
+            .vtabs #tab3:checked ~ .vtab-content #content3,
+            .vtabs #tab4:checked ~ .vtab-content #content4,
+            .vtabs #tab5:checked ~ .vtab-content #content5,
+            .vtabs #tab6:checked ~ .vtab-content #content6,
+            .vtabs #tab7:checked ~ .vtab-content #content7,
+            .vtabs #tab8:checked ~ .vtab-content #content8 {
+                display: block; 
+            }
+
+            .vtabs .vtab-content {
+                position: absolute; 
+                top: 0; 
+                max-width: 65%; 
+                right: 10px; 
+                line-height: 1.5; 
+            }
+
+            .vtabs .vtab-content div{
+                display: none; 
+            }
+
+            h3 {
+                font-size: 35px; 
+                font-weight: 300; 
+                text-decoration: underline; 
+                color: purple; 
+            }
+
+            h4 {
+                font-size: 25px; 
+                font-weight: 300; 
+                color: purple; 
+                text-decoration: underline overline solid 2px purple;
+                padding-bottom: 5px; 
+                padding-top: 10px; 
+            }
+
+            .list1 {
+                padding-left: 25px; 
+            }
+
+            .des {
+                padding-left: 20px; 
+            }
+
+            .types {
+                font-size: 20px; 
+                color: rgb(160, 63, 160); 
+                text-decoration: underline overline dashed 2px purple;
+                padding-bottom: 8px;
+            }
+
+            .extra {
+                padding: 14px;
+                background-color: #fbddff !important; 
+                border-left: 6px solid #e86cf8 !important; 
+            }
+
+            .vid {
+                padding: 15px; 
+            }
+
+            #bt:hover {
+                background-color: white;
+                color: purple; 
+            }
+    
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a class = "active" href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2">
+            <h1 class = "heading">CHAPTER 8.3: SECURITY OF DATA</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+
+            <div class = "vtabs">
+                <input type = "radio" name="vtab" id ="tab1"checked>
+                <label for= "tab1">Hacking</label>
+
+                <input type = "radio" name="vtab" id ="tab2" >
+                <label for= "tab2">Phishing</label>
+
+                <input type = "radio" name="vtab" id ="tab3">
+                <label for= "tab3">Pharming</label>
+
+                <input type = "radio" name="vtab" id ="tab4">
+                <label for= "tab4">Spyware & Key-logging Software</label>
+
+                <input type = "radio" name="vtab" id ="tab5">
+                <label for= "tab5">Viruses</label>
+
+                <input type = "radio" name="vtab" id ="tab6">
+                <label for= "tab6">Spam</label>
+
+                <input type = "radio" name="vtab" id ="tab7">
+                <label for= "tab7" style = "font-size: 18px;">Moderated & Unmoderated Forums</label>
+
+                <input type = "radio" name="vtab" id ="tab8">
+                <label for= "tab8">Cookies </label>
+
+                <div class = "vtab-content">
+                    <div id = "content1">
+                        <h3>Hacking</h3>
+                        <p class = "des"><em>Gaining unauthorised access to a computer system</em></p>
+                        <h4>Consequences</h4>
+                        <ul class = "list1">
+                            <li>Identity theft </li>
+                            <li>Misuse of personal info</li>
+                            <li>Data can be deleted</li>
+                            <li>Changed or corruption of computer</li>
+                        </ul>
+                        <h4>Prevention</h4>
+                        <ul class = "list1">
+                            <li>Use of firewalls</li>
+                            <li>Use strong passwords and IDs</li>
+                            <li>Use of intrusion detection software</li>
+                            <li>Use of IDs and passwords</li>
+                        </ul>
+                        <br>
+                        <p class = "extra"> Use of encryption won’t stop hacking - just makes the data unreadable to the hacker, but the data can still be deleted, , or corrupted </p>
+                        <h4>Hacking VS Cracking </h4>
+                        <p class = "des"><em>Cracking is where someone edits the source code of a program</em>
+                            <ul class = "list1">
+                                <li>Usually done for a malicious purpose, which refers to deletion, fraud, identity theft, and selling on personal data </li>
+                                <li>Always illegal and very damaging </li>
+                            </ul>
+                        </p>
+                        <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/vhRScF7uwMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>  
+                    <div id = "content2">
+                        <h3>Phishing</h3>
+                        <p class = "des"><em>A fraudulent operation involving the use of emails</em></p>
+                        <h4>How does it work?</h4>
+                        <ul style = "list-style-type: lower-roman; padding-left: 25px;">
+                            <li>Creator sends legitimate-looking emails to target</li>
+                            <li>As soon as they create a link or attached file, they are sent to a fake website or fooled into giving personal data </li>
+                        </ul>
+
+                        <h4>Consequences</h4>
+                        <ul class = "list1">
+                            <li>The creator of the email can gain personal data, such as bank account data or credit card numbers, from the user </li>
+                            <li>Can lead to fraud or identity theft </li>
+                        </ul>
+                        <h4>Prevention</h4>
+                        <ul class = "list1">
+                            <li>Many ISPs or web browsers filter out phishing emails </li>
+                            <li>Users should always be cautious when opening emails or attachments </li>
+                            <li>Don’t click on executable attachments that end in .exe, .bat, .com or .php</li>
+                        </ul>
+
+                        <h4>Types of phishing </h4>
+                        <p class = "types">Smishing</p>
+                            <ul class = "list1">
+                                <li>Short for SMS phishing </li>
+                                <li>Uses the SMS system of mobiles phones to send out fake text messages</li>
+                                <li>Often contain a URL or telephone number embedded in the text message</li>
+                                <li>The recipient will be asked to log on to the website or make a telephone call </li>
+                                <li>The text message will appear to come from a legitimate source</li>
+                            </ul>
+                        
+                            <p class = "types">Vishing (Voice Mail Phishing)</p>
+                            <p class = "des"><em>Uses voice mail message to trick the user into calling the telephone number contained in the message</em></p>
+                            <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/_Tc5qywg-8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div id = "content3">
+                        <h3>Pharming</h3>
+                        <p class = "des"><em>Malicious code installed on a user’s computer or a web server, redirecting the user to a fake website without their knowledge (the user doesn’t have to take any action)</em></p>
+                        <h4>Consequences</h4>
+                        <ul class = "list1">
+                            <li>Creator of the malicious code can gain personal data from the users when they visit the fake website
+                                <ul class = "list2">
+                                    <li>Usually, the website appears to be that of a well-known and trusted company </li>
+                                </ul>
+                            </li>
+                            <li>Can lead to fraud or identity theft </li>
+                        </ul>
+
+                        <h4>Prevention</h4>
+                        <ul class = "list1">
+                            <li>Anti-spyware software can identify and remove pharming code from a user’s computer
+                                <ul class = "list2">
+                                    <li>Always look out for clues that they are being connected to a secure website; look out for HTTPS in the URL or use of the padlock symbol</li>
+                                </ul>
+                            </li>
+                            <li>The user should always be alert and look out for clues that they are being redirected to another website</li>
+                        </ul>
+                        <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/e0w04HhsrTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div id = "content4">
+                        <h3>Spyware & Key-logging software </h3>
+                        <ul class = "list1">
+                            <li>Software that gathers data by monitoring keypresses on the keyboard</li>
+                            <li>The gathered data is then sent back to the person who sent the software </li>
+                        </ul>
+                        <h4>Consequences</h4>
+                        <ul class = "list1">
+                            <li>Gives the originator access to all data entered using a keyboard on the user’s computer</li>
+                            <li>Software can install other spyware, read cookie data, and also change a user’s default browser </li>
+                        </ul>
+
+                        <h4>Prevention</h4>
+                        <ul class = "list1">
+                            <li>Use anti-spyware software to reduce the risk</li>
+                            <li>The user should always be alert and check for clues that their keyboard activity is being monitored</li>
+                            <li>When entering a password, for example, using a pointing device or touch screen to select characters from a drop-down menu can reduce the risk </li>
+                        </ul>
+                        <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/-Z3pp14oUiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div id = "content5">
+                        <h3>Viruses </h3>
+                        <p class = "des"><em>Program code or software that replicates/copies itself intending to delete or corrupt files on a computer, causing the computer to malfunction </em></p>
+                        <h4>Consequences</h4>
+                        <ul class = "list1">
+                            <li>Cause the computer to crash, stop function normally or become unresponsive</li>
+                            <li>The software can delete files or data on a computer</li>
+                            <li>The software can corrupt operating system files, making the computer run slowly or even crash</li>
+                        </ul>
+
+                        <h4>Prevention</h4>
+                        <ul class = "list1">
+                            <li>Install anti-virus software and update it regularly</li>
+                            <li>Don’t use software from unknown sources</li>
+                            <li>Be careful when opening emails or attachments from unknown senders </li>
+                        </ul>
+                        <br>
+                        <p class = "extra"> Backing up files won’t guard against the effect of viruses; the virus may have already attached itself to the files that are being copied to the backup system; when these files are then copied back to the computer, the virus is simply reinstalled </p>
+                        <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/Ip-u5NZJiwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div id = "content6">
+                        <h3>Spam </h3>
+                        <ul class = "list1">
+                            <li>Electronic junk email sent out to a recipient who is on a mailing list or mailing group </li>
+                            <li>Spammers obtain the email addresses from chat rooms, websites, newsgroups, and even certain viruses that have been set up to harvest a user's contacts list </li>
+                        </ul>
+                        <h4>Consequences</h4>
+                        <ul class = "list1">
+                            <li> Denial of services
+                                <ul class = "list2">
+                                    <li>An attack on a network that is designed to slow the network down by flooding it with useless traffic </li>
+                                </ul>
+                            </li>
+                            <li>Phishing attacks</li>
+                            <li>The spread of computer viruses </li>
+                        </ul>
+
+                        <h4>Prevention</h4>
+                        <ul class = "list1">
+                            <li>Junk email filter</li>
+                            <li>Blocking images in HTML messages</li>
+                            <li>Do not sign up for commercial mailing lists</li>
+                            <li>Do not reply to an email</li>
+                            <li>Unsubscribe from a mailing list you did not sign up</li>
+                        </ul>
+                        <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/PJmnYCGnBPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div id = "content7">
+                        <h3>Moderated & Unmoderated Forums </h3>
+                        <h4>Moderated Forums</h4>
+                        <ul class = "list1"> 
+                            <li>Refers to an online discussion forum in which all the posts are checked by an administrator before they are allowed to be posted </li>
+                            <li>Moderators can not only prevent spam, but can also filter out any posts that are inappropriate, rude, or offensive, or even those that wander off the main topic</li>
+                        </ul>
+
+                        <h4>Unmoderated Forums</h4>
+                        <ul class = "list1">
+                            <li>Owned by no one</li>
+                            <li>Not policed</li>
+                            <li>Voluntary cooperation between the users and the network operators as the only safeguards</li>
+                        </ul>
+                    </div>
+
+                    <div id = "content8">
+                        <h3>Cookies </h3>
+                        <h4>What are cookies</h4>
+                        <ul class = "list1">
+                            <li>Small files or code stored on the user’s computer, sent by a webserver</li>
+                            <li>Each cookie is effectively a small lookup table containing pairs of (key, data) values</li>
+                            <li>Once the cookie has been read by the code on the webs server or user’s computer, the data can be retrieved and used to customise the web page for each individual
+                                <ul class = "list2">
+                                    <li>Referred to as user preferences</li>
+                                </ul>
+                            </li>
+                            <li>The data gathered by cookies form an anonymous user profile
+                                <ul class = "list2">
+                                    <li>Doesn’t contain personal data such as passwords or credit card numbers </li>
+                                </ul>
+                            </li>
+                            <li>An efficient way of carrying data from one website session to another, or even between sessions on related websites </li>
+                            <li>Remove the need to store massive amounts of data on the webserver itself 
+                                <ul class = "list2">
+                                    <li>Storing the data on the web server without using cookies would also make it very difficult to retrieve a user’s data without requiring the user to log in every time they visit the website</li>
+                                </ul>
+                            </li>
+                            <li>The use of secure servers is always advised 
+                                <ul class = "list2">
+                                    <li>A secure web server is one that supports any of the major security protocols that encrypt and decrypt messages to protect them against third-party eavesdropping </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>Consequences</h4>
+                        <ul class = "list1">
+                            <li>Hijacking of cookies and enabling access to browsing sessions</li>
+                            <br>
+                        </ul>
+                    </div>
+                </div>
+            </div><!--vtabs-->
+            <a href="8.4.html" class="button" style = "bottom: 30px;" id = "bt">&#8250;</a>
+            <a href="8.2.html" class="button2" style = "bottom: 30px; " id = "bt">&#8249;</a>
+        </body>
+    </main>
+</html>

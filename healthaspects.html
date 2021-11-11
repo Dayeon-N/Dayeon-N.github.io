@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Health Aspects</title>
+        <link rel = "stylesheet" href = "menu.css">
+        <link rel = "stylesheet" href = "ch7and8.css">
+        <style>
+          body {
+            overflow-y: scroll;
+            min-width: 950px; 
+            overflow-x: scroll;
+          }
+
+        /* The flip box container */
+        .flip-box {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        perspective: 1000px; 
+        }
+
+        /* Position the front and back side */
+        .flip-box-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: left; 
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        }
+
+        h4 {
+          text-align: center; 
+        }
+
+        .flip-box:hover .flip-box-inner {
+        transform: rotateY(180deg);
+        }
+
+        /* Position the front and back side */
+        .flip-box-front, .flip-box-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        }
+
+        /* Style the front side */
+        .flip-box-front {
+        background-color: #7976a8;
+        color: white;
+        font-weight: bold; 
+        margin-top: auto;
+        margin-bottom: auto; 
+        }
+
+        /* Style the back side */
+        .flip-box-back {
+        background-color: white;
+        color: #2d2e27;
+        transform: rotateY(180deg);
+        }
+
+        .column-1 {
+            float: left;
+            width: 50%;
+            padding: 0 50px; 
+            margin: 10px 20px;
+            bottom: 300px; 
+            }
+
+            .row-1:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .row-1 {
+            display: flex;
+            bottom: 10px;
+            }
+
+            .column-1 {
+            flex: 50%;
+            }
+
+            .column-2 {
+            float: left;
+            width: 50%;
+            padding: 0 50px; 
+            margin: 10px 20px;
+            bottom: 300px; 
+            }
+
+            .row-2:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .row-2 {
+            display: flex;
+            bottom: 0px;
+            }
+
+            .column-2 {
+            flex: 50%;
+            }
+
+            .column-3 {
+            float: left;
+            width: 50%;
+            padding: 0 50px; 
+            margin: 10px 20px;
+            bottom: 300px; 
+            }
+
+            .row-3:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .row-3 {
+            display: flex;
+            bottom: 0px;
+            }
+
+            .column-3 {
+            flex: 50%;
+            }
+
+            .column-4 {
+            float: left;
+            width: 50%;
+            padding: 0 50px; 
+            margin: 10px 20px;
+            bottom: 300px; 
+            }
+
+            .row-4:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .row-4 {
+            display: flex;
+            bottom: 0px;
+            }
+
+            .column-4 {
+            flex: 50%;
+            }
+
+            .column-5 {
+            float: left;
+            width: 50%;
+            padding: 0 50px; 
+            margin: 10px 20px;
+            bottom: 300px; 
+            }
+
+            .row-5:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .row-5 {
+            display: flex;
+            bottom: 0px;
+            }
+
+            .column-5 {
+            flex: 50%;
+            }
+
+            .list3 {
+              padding-left: 30px; 
+            }
+
+            .back {
+              position: relative; 
+              right: 50%; 
+              left: 45% ;
+              margin: 10px; 
+              background-color: #7976a8; 
+              border: none; 
+              font-size: 20px; 
+              color: white; 
+              padding: 15px;; 
+              width: 100px; 
+              text-align: center; 
+              -webkit-transition-duration: 0.4s; 
+              transition-duration: 0.4s; 
+              text-decoration: none; 
+              overflow: hidden;
+              cursor: pointer; 
+            }
+
+
+            
+        </style>
+    </head>
+    <input type = "checkbox" name ="" id="check">
+    <div class = "container">
+        <label for="check">
+            <span class="hitimes" id="times"></span>
+            <span class="hibars" id="bars"></span>
+        </label>
+         <div class = "head">Menu</div>
+         <ol>
+             <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+             <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+          </ol>
+             <div class = "dropdown">
+                <button class="dropbtn">Chapter 7
+                  <i class = "ch7-down"></i>
+                </button>
+                <div class = "dropdown-content">
+                    <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                    <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                    <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                    <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                    <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                    <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                    <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+             </div>
+            </div>
+            <div class = "dropdown">
+              <button class="dropbtn">Chapter 8
+                <i class = "ch8-down"></i>
+              </button>
+              <div class = "dropdown-content">
+                  <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                  <a class = "active" href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                  <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                  <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                  <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+           </div>
+          </div>
+    </div>
+    <hr style="color:#8785a2">
+    <h1 class = "heading">CHAPTER 8.1: PHYSICAL SECURITY</h1>
+    <hr style="color:#8785a2">
+    <section></section>
+
+    <h2 class="heading"  style = "margin-top: 20px;">Health aspects</h2>
+    <div class = "card">
+    <h3>Repetitive Strain Injury (RSI)</h3>
+    <p>
+        -    When joints such as the shoulder, wrists, or fingers swell, causing pain <br>
+        -    Damage gets worse if left untreated <br>
+        -    Can lead to hand/arm immobility <br>
+    </p>
+    <div class="row-1">
+      <div class = "column-1">
+              <div class="flip-box">
+                  <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                      <h4 style = "margin-top: 30%;">Causes</h4>
+                  </div>
+                    <div class="flip-box-back">
+                      <ul class = "list3" style = "margin-top: 10%;">
+                          <li>Typing for an extended period of time</li>
+                          <li>Typing with incorrect posture</li>
+                          <li>Clicking on mouse rapidly/extendedly</li>
+                          <li>Holding mouse incorrectly</li>
+                          <li>Working in a cramped space</li>
+                      </ul>          
+                    </div>
+                  </div>
+              </div>
+      </div>
+      <div class = "column-1">
+                <div class="flip-box">
+                  <div class="flip-box-inner">
+                    <div class="flip-box-front" style = "flex-wrap: wrap;">
+                      <h4 style = "margin-top: 30%;">Ways to prevent</h4>
+                  </div>
+                    <div class="flip-box-back">
+                      <ul class = "list3" >
+                          <li style = "margin-top: 15%;">Take periodic breaks</li>
+                          <li>Use ergonomic keyboard & mouse</li>
+                          <li>Use a wrist rest</li>
+                          <li>Ensure sufficient space for comfortable work</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+      </div>
+    </div>
+  </div>
+  <div class = "card">
+    <h3 style = "margin-right: 1050px;">Back problems</h3>
+    <div class="row-2">
+      <div class = "column-2">
+          <div class="flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front">
+                  <h4 style = "margin-top: 30%;">Causes</h4>
+              </div>
+                <div class="flip-box-back">
+                  <ul class = "list3"  style = "margin-top: 15%;">
+                      <li>Not sitting upright while working</li>
+                      <li>Sitting with poor posture</li>
+                      <li>Working in a cramped space</li>
+                      <li>Incorrect computer screen positioning</li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class = "column-2">
+            <div class="flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front">
+                  <h4 style = "margin-top: 30%;">Ways to prevent</h4>
+              </div>
+                <div class="flip-box-back">
+                  <ul class = "list3"  style = "margin-top: 15%;">
+                      <li>Take periodic breaks</li>
+                      <li>Use adjustable chairs with good back support</li>
+                      <li>Sit upright with good posture</li>
+                      <li>Keep feet flat on the floor</li>
+                  </ul>          
+              </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class = "card">
+    <h3  style = "margin-right: 1050px;">Eye problems</h3>
+    <div class="row-3">
+      <div class = "column-3">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <h4 style = "margin-top: 30%;">Causes</h4>
+            </div>
+            <div class="flip-box-back">
+              <ul class = "list3"  style = "margin-top: 15%;">
+                <li>Staring at the computer for extended periods of time</li>
+                <li>Working with poor room lighting</li>
+                <li>Glare/flicker of the computer screen</li>
+                <li>Dirt on screen can cause eye strain</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class = "column-3">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <h4 style = "margin-top: 30%;">Ways to prevent</h4>
+            </div>
+            <div class="flip-box-back">
+              <ul class = "list3"  style = "margin-top: 15%;">
+                <li>Take periodic breaks</li>
+                <li>Use TFT rather than CRT</li>
+                <li>Use anti-glare screens</li>
+                <li>Ensure good rooms lighting</li>
+                <li>Clean dirt</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class = "card">
+    <h3 style = "margin-right: 1050px;">Headaches</h3>
+    <div class="row-4">
+      <div class = "column-4">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <h4 style = "margin-top: 30%;">Causes</h4>
+            </div>
+            <div class="flip-box-back">
+              <ul class = "list3" style = "margin-top: 20%;">
+                <li>Incorrect lighting</li>
+                <li>Screen reflections</li>
+                <li>Flickering screens</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="column-4">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <h4 style = "margin-top: 30%;">Ways to prevent</h4>
+            </div>
+            <div class="flip-box-back">
+              <ul class = "list3" style = "margin-top: 15%;">
+                <li>Use anti-glare screen/window blinds to cut out reflections</li>
+                <li>Take regular breaks and exercise</li>
+                <li>Test eyes regularly and use middle vision glasses if necessary</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "card">
+    <h3 style = "margin-right: 1000px;">Ozone irritation</h3>
+    <div class="row-5">
+      <div class = "column-5">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <h4 style = "margin-top: 30%;">Causes</h4>
+            </div>
+            <div class="flip-box-back">
+              <ul class = "list3" style = "margin-top: 20%;">
+                <li>Laser printers in an office area due to dry skin and respiratory problems</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="column-5">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <h4 style = "margin-top: 30%;">Ways to prevent</h4>
+            </div>
+            <div class="flip-box-back">
+              <ul class = "list3"  style = "margin-top: 15%;">
+                <li>Proper ventilation to remove the ozone gas as quickly as possible</li>
+                <li>Laser printers housed in a designated printer room</li>
+                <li>Change to other types of the printer if necessary</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="8.1.html" class="back">Back to 8.1</a>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

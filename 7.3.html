@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>7.3 Development & Testing</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+
+    <style>
+
+            .interface {
+                margin-bottom: 30px; 
+                margin-left: 50px; 
+                margin-right: 50px; 
+                padding: 5px; 
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8;  
+                line-height: 25px;
+            }
+
+
+            body {
+                overflow-y: scroll;
+            }
+
+            .testcard {
+                box-shadow: 0 4px 12px 0 rgba(140, 16, 151, 0.411);
+                max-width: 700px;
+                margin: 10px auto; 
+                text-align: left;
+                line-height: 30px;
+                padding: 10px;  
+            }
+
+            * {
+            box-sizing: border-box;
+            }
+
+            /* Float four columns side by side */
+            .column {
+            float: left;
+            width: 50%;
+            padding: 0 10px; 
+            height: 150px; 
+            }
+
+            /* Remove extra left and right margins, due to padding in columns */
+            .row {margin: 0 -5px;}
+
+            /* Clear floats after the columns */
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .test-data {
+                overflow-y: scroll;
+                box-shadow: 0 4px 8px 0 rgba(177, 70, 177, 0.274);
+                max-width: 700px;
+                margin: 10px auto; 
+                line-height: 30px;
+                padding: 20px; 
+            }
+
+            #h {
+                font-family: monospace;
+                font-size: 18px; 
+                text-decoration: underline; 
+            }
+
+    
+
+    </style>
+
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a class = "active" href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2" id = "top">
+            <h1 class = "heading">CHAPTER 7.3: DEVELOPMENT & TESTING</h1>
+            <hr style="color:#8785a2">
+            <section></section> 
+            
+            <div class = "card">
+                <h3 id = "card-t">Development</h3>
+                <p id = "card-c"><ul class = "list1"><li>If the system contains files 
+                    <ul class = "list2">
+                        <li>File structure needs to be finalised at this stage </li>
+                        <li>Once the file structure has been determined, it is then created and tested fully to make sure it is robust when the system actually goes live </li>
+                    </ul>
+                    </li>
+                    </ul>
+                </p>
+                <ul class = "list1"> 
+                    <li>Techniques need to be adopted to make sure the data populating the files/database is at least of the right type and that it conforms to certain rules 
+                        <ul class = "list2">
+                            <li>Validation and verification are used to ensure this 
+                                <ul style = "padding-left: 15px; font-size: 15px; list-style-type: square; ">
+                                    <li>Need to be fully tested to ensure they do trap unwanted data, but also to make sure that any data transferred from a paper-based system to an electronic system has been done accurately </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class = "interface">
+                <h3>User Interface</h3>
+                <ul class = "list1">
+                    <li>How the types of hardware are used to interface with the final system now needs to be identified 
+                        <ul class = "list2">
+                            <li>How the screens and any other input devices will be used to collect the data and the way the output will be presented </li>
+                        </ul>
+                    </li>
+                    <li>If specialist hardware is needed, how these devices will be used with the system when it is implemented needs to be finalised 
+                        <ul class = "list2">
+                            <li>Followed by thorough testing to ensure that the user screens are user-friendly and that the correct output is associated with the inputs to the system </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class = "testcard">
+                <h3 style = "text-align: center;"><em> &#8249; Testing &#8250;</em></h3>
+                <h4 style = "text-align: center;"> Testing Strategies</h4>
+                <ul class = "list1"> 
+                    <li>Software is often developed in modular form 
+                        <ul class = "list2">
+                            <li>Allows the software to be broken down into smaller parts, known as modules </li>
+                            <li>Each part is developed separately by a programmer and is tested to see if it functions correctly </li>
+                            <li>Any problem resulting from the testing requires the module to be modified and then tested again</li>
+                        </ul>
+                    </li>
+                    <li>After the completion of the development of the module 
+                        <ul class = "list2">
+                            <li>The whole system needs to be tested even though each module may work satisfactorily, when they are all put together there may be data clashes or incompatibility, memory issues, etc </li>
+                        </ul>
+                    </li>
+                    <li>All of this may lead to a need to improve the input and output methods, file/database structures, validation, and verification methods, etc and then test everything fully again 
+                        <ul class = "list2">
+                            <li>Very time-consuming process</li>
+                            <li>Has to be as perfect as possible </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class = "test-data">
+                <h4 style = "text-align: center;">Different types of Data used in Testing</h4>
+                <div class="row">
+                    <div class="column">
+                      <div class="card"><p id = "h">Normal</p>
+                          <ul class = "list1">
+                              <li>Data that is acceptable/reasonable</li>
+                              <li>Has an expected outcome</li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="card"> <p id = "h">Extreme</p>
+                          <ul class = "list1">
+                              <li>Data at the limits of acceptability</li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="card"> <p id = "h">Abnormal</p>
+                          <ul class = "list1">
+                              <li>Data outside the limits of acceptability, or the wrong type of data</li>
+                              <li>Should be rejected or cause an error message</li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="card"><p id = "h">Live</p>
+                          <ul class = "list1">
+                              <li style = "padding: -10px">Once a system has been fully tested, it is then tested with live data, live data is entered into the new system and the results compared with those produced from the existing system </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <a href="7.4.html" class="button">&#8250;</a>
+            <a href="7.2.html" class="button2">&#8249;</a>
+        </body>
+    </main>
+</html>

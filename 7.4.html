@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>7.4 Implementation</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style>
+            * {
+            box-sizing: border-box;
+            }
+
+            body {
+            background-color: #f1f1f1;
+            overflow-y: scroll;
+            }
+
+            .imp-method {
+            margin-bottom: 30px;
+            margin-left: 50px; 
+            margin-right: 50px; 
+            padding: 20px; 
+            border: 1px solid; 
+            box-shadow: 0 4px 8px 0 rgba(20, 20, 20, 0.644);
+            }
+
+            h3 {
+            font-size: 25px;
+            word-break: break-all;
+            }
+
+            h4 {
+                font-size: 20px;            
+            }
+
+            .row {
+            margin: 8px ;
+            }
+
+            /* Padding between each column*/
+            .row,
+            .row > .column {
+            padding: 20px;
+            }
+
+            .column {
+            float: left;
+            width: 50%; 
+            border: 0.5px solid grey; 
+            box-shadow: 0 2px 8px 2px rgba(44, 39, 44, 0.473);
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            /* Content */
+            .content {
+            background-color: white;
+            padding: 10px;
+            }
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 900px) {
+            .column {
+                width: 50%;
+            }
+            }
+
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+            }
+
+            .method {
+                color: purple; 
+                font-size: 24px; 
+                text-decoration: underline;
+            }
+
+            .description {
+                padding: 5px; 
+                line-height: 25px; 
+            }
+
+            .b-description {
+                padding-left: 15px; 
+                line-height: 25px; 
+            }
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a class = "active" href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2" id = "top">
+            <h1 class = "heading">CHAPTER 7.4: IMPLEMENTATION</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+
+            <div class = "card">
+                <h3 id = "card-t">What is the Implementation Stage?</h3>
+                <p id = "card-c"> 
+                    <ul class = "list1">
+                        <li>Once the system is fully tested, the next stage is to fully implement it </li>
+                        <li>Four common methods used for changing over from the old system to the new system </li>
+                        <li>Involves setting up the system so that it matches the design specification and testing carried out using the plan to make sure that all the parts of the system work correctly with normal, extreme, and erroneous data </li>
+                    </ul>
+                </p>
+                </div>
+
+                <div class = "imp-method">
+                    <h3 style = "font-weight: bold; color: rgb(87, 0, 87); text-align: center; font-size: 30px; ">Implementation Methods</h3> 
+                    <!--Gallery Grid-->
+                    <div class = "row">
+                        <div class = "column">
+                            <div class = "content">
+                                <h4 class = "method">Direct</h4>
+                                <p class = "description"><strong>Design:</strong> <br> The old system is stopped overnight and the new system introduced immediately</p>
+                                <p class = "description"><strong>Pros & Cons</strong>
+                                    <ul class = "list1 b-description">
+                                        <li>Can be disastrous if the new system fails since the old system is no longer available</li>
+                                        <li>Immediate benefits</li>
+                                        <li>Reduction in costs since only one system used there is no need to pay for two sets of staff </li>
+                                        <li>Less likelihood of a malfunction since the new system will have been fully tested</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <div class = "column">
+                            <div class = "content">
+                                <h4 class = "method">Parallel</h4>
+                                <p class = "description"><strong>Design:</strong> <br> The old and new systems are run side by side for a time before the new system takes over altogether</p>
+                                <p class = "description"><strong>Pros & Cons</strong>
+                                    <ul class = "list1 b-description">
+                                        <li>If this new system fails, the old system is available to backup</li>
+                                        <li>Possible to gradually train staff</li>
+                                        <li>More expensive than direct since extra staff are needed to run both systems together</li>
+                                        <li>More time consuming than direct since data needs to be entered into two systems </li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <div class = "row">
+                    <div class = "column">
+                        <div class = "content">
+                            <h4 class = "method">Pilot</h4>
+                            <p class = "description"><strong>Design:</strong> <br> The new system is introduced into one branch or office of the company and its performance is assessed before being introduced elsewhere in the company</p>
+                            <p class = "description"><strong>Pros & Cons</strong>
+                                <ul class = "list1 b-description">
+                                    <li>If the new system fails, only one part is affected; the remainder is unaffected</li>
+                                    <li>Possible to train staff in one area only, much faster and less costly than parallel </li>
+                                    <li>Costs are less than parallel since only one part of the system is being used in the pilot warehouse </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "column">
+                        <div class = "content">
+                            <h4 class = "method">Phased</h4>
+                            <p class = "description"><strong>Design:</strong> <br> Only part of the new system is introduced and, only when it proves to work satisfactorily, is the next part introduced, and so on, until the old system is fully replaced</p>
+                            <p class = "description"><strong>Pros & Cons</strong>
+                                <ul class = "list1 b-description">
+                                    <li>If the lasted part fails, it is only necessary to go back in the system to the point of failure; hence failure isn’t disastrous </li>
+                                    <li>More expensive than direct since it is necessary to evaluate each phase before moving to the next stage </li>
+                                    <li>Very time consuming since each part needs to be fully evaluated before making any further changes to the system </li>
+                                    <li>Possible to ensure the system works properly before expanding</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="7.5.html" class="button">&#8250;</a>
+            <a href="7.3.html" class="button2">&#8249;</a>
+        </body>
+    </main>
+</html>

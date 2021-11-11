@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>8.4 Additional Security of Data</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style>
+
+        body {
+            overflow-y: scroll;
+            overflow-x: scroll;
+        }
+        h3{
+            font-size: 35px;
+            font-weight: 300; 
+            text-decoration: underline; 
+            color: purple; 
+            text-align: center;
+            padding-bottom: 10px; 
+        }
+        .accordionMenu{
+            width: 800px;
+            margin: 0 auto; 
+            padding-bottom: 15px; 
+        }
+        .accordionMenu input[type=radio]{
+            display: none;
+        }
+        .accordionMenu label{
+            display: block;
+            height: 50px;
+            line-height: 47px;
+            padding: 0 25px 0 10px;
+            background: #7976a8;
+            font-size: 18px;
+            color: whitesmoke;
+            position: relative;
+            cursor: pointer;
+            border-bottom: 2px solid whitesmoke;
+        }
+
+        .accordionMenu label::after{
+            display: block;
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 10px;
+            border-color: transparent transparent transparent #ffffff;
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            z-index: 10;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -ms-transition:all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        .accordionMenu .content{
+            max-height: 0;
+            height: 0;
+            overflow: hidden;
+            -webkit-transition: all 2s ease-in-out;
+            -moz-transition: all 2s ease-in-out;
+            -o-transition: all 2s ease-in-out;
+            transition: all 2s ease-in-out;
+        }
+        .accordionMenu .content .inner{
+            font-size: 1.2rem;
+            color: black;
+            line-height: 1.5;
+            background: rgb(247, 247, 229);
+            padding: 20px 10px;
+        }
+
+        .accordionMenu input[type=radio]:checked + label:after{
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .accordionMenu input[type=radio]:checked + label + .content{
+            max-height: 2000px;
+            height: auto;
+        }
+
+        .vtabs {
+            max-width: 950px; 
+            padding: 20px; 
+            margin: 50px auto; 
+            position: relative; 
+            border: solid 2px #7976a8; 
+            overflow-y: scroll;
+            background-color: whitesmoke; 
+            border-radius: 15px; 
+        }
+
+        .vtabs input {
+            display: none; 
+        }
+
+        .vtabs label {
+            display: block; 
+            width: 20%; 
+            padding: 15px; 
+            color: #a2a2a2; 
+            font-weight: 700; 
+            font-size: 24px; 
+            border-left: 5px solid #dcdcdc; 
+            transition: 0.3s ease;
+            font-size: 15px; 
+        }
+
+        .vtabs label:hover {
+            cursor: pointer; 
+            color: #404040; 
+        }
+
+        .vtabs input:checked + label {
+            color: #404040; 
+            border-left: 5px solid #b700ff; 
+        }
+
+        .vtabs #tab1:checked ~ .vtab-content #content1,
+        .vtabs #tab2:checked ~ .vtab-content #content2,
+        .vtabs #tab3:checked ~ .vtab-content #content3,
+        .vtabs #tab4:checked ~ .vtab-content #content4,
+        .vtabs #tab5:checked ~ .vtab-content #content5,
+        .vtabs #tab6:checked ~ .vtab-content #content6,
+        .vtabs #tab7:checked ~ .vtab-content #content7,
+        .vtabs #tab8:checked ~ .vtab-content #content8 {
+            display: block; 
+        }
+
+        .vtabs .vtab-content {
+            position: absolute; 
+            top: 10px; 
+            max-width: 75%; 
+            right: 10px; 
+            line-height: 30px; 
+            margin-left: 10px; 
+        }
+
+        .vtabs .vtab-content div{
+            display: none; 
+        }
+
+        .group {
+            border: 5px ridge rgb(213, 112, 216); 
+            margin: 40px 130px; 
+            padding: 10px;
+            border-radius: 35px;  
+            min-width: 1000px; 
+        }
+
+        .list3 {
+            padding-left: 15px; 
+            font-size: 15px; 
+            list-style-type: square;
+        }
+
+        .des {
+            padding-left: 20px; 
+        }
+
+        
+        .extra {
+            padding: 14px;
+            background-color: #fbddff !important; 
+            border-left: 6px solid #e86cf8 !important; 
+        }
+
+        #content3 {
+            margin-right: 150px;
+        }
+
+        #c3list {
+            margin-right: 300px; 
+        }
+
+        th {
+            text-align: center;
+            background-color: #9591dd;
+            color: white;
+            padding: 5px;
+            border: #7976a8 0.5px outset; 
+            font-size: 14px; 
+        }
+
+        .th2 {
+            text-align: center;
+            background-color: #9591dd;
+            color: white;
+            padding: 5px;
+            border: #7976a8 0.5px outset; 
+            font-size: 14px; 
+        }
+
+        td {
+            text-align: center;
+            color: black;
+            padding: 3px;
+            border: #7976a8 0.5px outset; 
+            font-size: 11px; 
+        }
+
+        .td2 {
+            text-align: left; 
+            font-size: 11px; 
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;}
+
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        td th tr {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 690px; 
+            margin-bottom: 30px; 
+            padding-right: 30px; 
+        }
+
+        .img { 
+            height: 300px; 
+            width: 400px; 
+            padding-top: 10px; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .vid {
+            padding: 15px; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .extra {
+            padding: 14px;
+            background-color: #faffc2 !important; 
+            border-left: 6px solid #e8ff83 !important; 
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px; 
+            position: relative; 
+        }
+
+        #icon1 {
+            float: left; 
+            left: 330px;
+            top: -5px; 
+        }
+
+        #icon2 {
+            float: right; 
+            right: 330px;
+            top: -5px; 
+        }
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a class = "active" href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2">
+            <h1 class = "heading" style = "min-width: 1000px;">CHAPTER 8.4: ADDITIONAL SECURITY OF DATA</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+        
+        <div class = "group">
+            <img src = "images/firewallicon.png" class = "icon" id = "icon1"><img src = "images/firewallicon.png" class = "icon" id = "icon2"><h3>Firewalls</h3>
+            <div class="accordionMenu">
+                <!-- 1st menu  -->
+                <input type="radio" name="trg1" id="acc1" checked="checked">
+                <label for="acc1">What are firewalls?</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Can be either software or hardware</li>
+                            <li>Sits between the user’s computer and an external network (e.g. internet) and filters information coming in and out of the user’s computer </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 2nd menu -->
+                <input type="radio" name="trg1" id="acc2">
+                <label for="acc2">Tasks carried out by Firewall</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>To examine the ‘traffic’ between a user’s computer (or internal network) and a public network (the internet as an example) </li>
+                            <li>Checks whether incoming or outgoing data meets a given set of criteria</li>
+                            <li>If the data fails the criteria, the firewall will block the traffic and give the user a warning that there may be a security issue</li>
+                            <li>The firewall can be used to log all incoming and outgoing traffic to allow later interrogation by the user </li>
+                            <li>Criteria can be set so that the firewall prevents access to certain undesirable sites; the firewall can keep a list of all undesirable IP addresses</li>
+                            <li>Help prevent viruses or hackers entering the user’s computer network </li>
+                            <li>Help prevent hackers from gaining access to the user’s computer or network
+                                <ul class = "list2">
+                                    <li>By blocking IP addresses (But the hackers can still have access to a computer or network if they are using an allowed computer)</li>
+                                </ul>
+                            </li>
+                            <li>Warn the user when some software on their system tries to access an external data source 
+                                <ul class = "list2">
+                                    <li>Gives the user options of allowing it to go ahead or request that such access is denied </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 3rd menu -->
+                <input type="radio" name="trg1" id="acc3">
+                <label for="acc3">Firewall as Gateway</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>A firewall can be a hardware interface that is located somewhere between the computer and the internet connection </li>
+                            <li>Or can be software installed on a computer</li>
+                            <li>Certain circumstances where the firewall can’t prevent potential harmful traffic: 
+                                <ul class = "list2">
+                                    <li>Cannot prevent individuals, on internal networks, using their own modems to bypass the firewall</li>
+                                    <li>Employee misconduct or carelessness cannot be controlled by firewalls </li>
+                                    <li>Users on stand-alone computers can choose to disable the firewall, leaving their computer open to harmful traffic from the internet </li>
+                                </ul>
+                            </li>
+                        </ul> 
+                        <img src = "images/firewall.png" class = "img"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class = "group">
+            <img src = "images/security.png" class = "icon" id = "icon1" style = "left: 250px"><img src = "images/security.png" class = "icon" id = "icon2" style = "right: 250px"><h3>Security Protocols </h3>
+            <div class="accordionMenu">
+                <!-- 1st menu  -->
+                <input type="radio" name="trg1" id="acc4" checked="checked">
+                <label for="acc4">Secure Sockets Layer (SSL) </label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>A type of protocol that allows data to be sent and received securely over the internet </li>
+                            <li>When a user logs on to a website, SSL encrypts the data - only the user’s computer and the web server are able to make sense of what is being transmitted </li>
+                            <li>A user will know if SSL is being applied when they see HTTPS or the small padlock in the status bar at the top of the screen  
+                                <ul class = "list2"> 
+                                    <li>SSL certificates are small data files that digitally bind an encryption key to an organisation’s details </li>
+                                    <li>When installed on a web server, it shows as the green padlock and the HTTPS protocol and ensures secure connections from a web server to a web browser </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 2nd menu -->
+                <input type="radio" name="trg1" id="acc5">
+                <label for="acc5">Transport Layer Security (TLS) </label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Similar to SSL, but more recent</li>
+                            <li>A form of protocol that ensures the security and privacy of data between devices and users when communicating over the internet </li>
+                            <li>Essentially designed to provide encryption, authentication, and data integrity (maintaining the accuracy and the consistency of data) in a more effective way than its predecessor, SSL</li>
+                            <li>When a website and a user communicate over the internet, TLS is designed to prevent a third party hacking into this communication and causing problems with data security
+                                <ul class = "list2">
+                                    <li>Formed of two layers: 
+                                        <ul class = "list3">
+                                            <li>Record Protocol: part of the communication that can be used with or without encryption (contains the data being transferred over the internet</li>
+                                            <li>Handshake Protocol: permits the website and the user to authenticate each other and to make use of encryption algorithms (a secure session between user and website is established) </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Only recent web browsers support both SSL and TLS (a reason why older SSL is used in many cases)</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 3rd menu -->
+                <input type="radio" name="trg1" id="acc6">
+                <label for="acc6">Differences between SSL and TLS </label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Possible to extend TLS by adding new authentication methods</li>
+                            <li>TLS can make use of session caching, which improves the overall performance compared to SSL </li>
+                            <li>TLS separates the handshaking process from the record protocol (layer), which holds the data </li>
+                        </ul>
+                        <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/gX4GwH_Pl_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- 4th menu -->
+                <input type="radio" name="trg1" id="acc7">
+                <label for="acc7">Session Caching </label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>When opening a TLS session, it requires a lot of computer time due to the complex encryption keys being used</li>
+                            <li>The user of session caching can avoid the need to utilise so much computer time for each connection</li>
+                            <li>TLS can establish a new session or attempt to resume an existing session; using the latter can boost system performance considerably 
+                            </li>
+                        </ul>
+                        <br>
+                        <p class = "extra list1">Cach is a collection of processed data that is kept on hand and reused in order to avoid costly repeated database queries </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "group">
+            <img src = "images/encryptionicon.png" class = "icon" id = "icon1" style = "left: 330px"><img src = "images/encryptionicon.png" class = "icon" id = "icon2" style = "right: 330px"><h3>Encryption </h3>
+            <div class="accordionMenu">
+                <!-- 1st menu  -->
+                <input type="radio" name="trg1" id="acc8" checked="checked">
+                <label for="acc8">What is encryption?</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Used primarily to protect data in case it has been hacked or accessed illegally </li>
+                            <li>Won’t prevent hacking, but makes the data meaningless unless the recipient has the necessary decryption tools </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 2nd menu -->
+                <input type="radio" name="trg1" id="acc9">
+                <label for="acc9">How does it work?</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>It uses a secret key that has the capability of altering the characters in a message </li>
+                            <li>If this key is applied to a message, its content is changed, which then makes it unreadable unless the recipient also has the same secret key </li>
+                            <li>The key used to encrypt the message is known as the encryption key, the key used to decrypt the message is known as the decryption key </li>
+                            <li>When a message undergoes encryption, it becomes cypher script </li>
+                            <li>The original message is known as plain text </li>
+                        </ul>
+                        <img src = "images/encryption.jpg" style = "width: 400px; padding-top: 10px; display: block; margin-left: auto; margin-right: auto; width: 50%;"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "group">
+            <img src = "images/authentication.png" class = "icon" id = "icon1" style = "left: 290px"><img src = "images/authentication.png" class = "icon" id = "icon2" style = "right: 290px"><h3>Authentication </h3>
+            <div class="accordionMenu">
+                <!-- 1st menu  -->
+                <input type="radio" name="trg1" id="acc10" checked="checked">
+                <label for="acc10">What is authentication?</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Used to verify that data comes from a secure and trusted source </li>
+                            <li>Works with encryption to strengthen internet security </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 2nd menu -->
+                <input type="radio" name="trg1" id="acc11">
+                <label for="acc11">Digital Certificates</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>A pair of files stored on a user’s computer - used in the security of data sent over the internet </li>
+                            <li>Each pair of files is divided into: 
+                                <ul class = "list2">
+                                    <li>A public key (known by anyone) </li>
+                                    <li>A private key (known to the computer user only) </li>
+                                </ul>
+                            </li>
+                            <li>When sending an email, the original message is known as plain text</li>
+                            <li>Message is made more secure by attaching a digital certificate </li>
+                            <li>When the message is received, the recipient can verify that it comes from a known or trusted source by viewing the public key information 
+                                <ul class = "list2">
+                                    <li>An added level of security to protect the recipient from harmful emails </li>
+                                </ul>
+                            </li>
+                            <li>Digital certificate is made up of six parts: 
+                                <ul class = "list2">
+                                    <li>Sender’s email address</li>
+                                    <li>The name of the digital certificate owner</li>
+                                    <li>A serial number</li>
+                                    <li>Expiry date (the date range during which the certificate is valid) </li>
+                                    <li>Public key (used for encrypting messages and for digital signatures) </li>
+                                    <li>Digital signature of a certificate authority (CA)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <img src = "images/dgc.jpg" style = "width: 400px; padding-top: 10px; display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                    </div>
+                </div>
+
+                <!-- 3rd menu -->
+                <input type="radio" name="trg1" id="acc12">
+                <label for="acc12">Passwords</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Should be the combination of letters and numbers </li>
+                            <li>Strong passwords should contain: 
+                                <ul class = "list2">
+                                    <li>Upper case</li>
+                                    <li>Lower case</li>
+                                    <li>Numbers </li>
+                                    <li>Keyboard symbols</li>
+                                </ul>
+                            </li>
+                            <li>The user is only allowed to type password a certain number of times before the system locks the user out 
+                                <ul class = "list2">
+                                    <li>The user will be unable to log on until the system administrator has reset their password  </li>
+                                </ul>
+                            </li>
+                            <li>Password should be changed on a regular basis in case they become known to another user or a hacker</li>
+                            <li>It is important to prevent other people from gaining access to password by way of spyware or viruses </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4th menu -->
+                <input type="radio" name="trg1" id="acc13">
+                <label for="acc13">Biometrics</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Relies on certain unique characteristics of human beings:
+                                <ul class = "list2">
+                                    <li>Fingerprint scans</li>
+                                    <li>Signature recognition</li>
+                                    <li>Retina scans</li>
+                                    <li>Iris recognition</li>
+                                    <li>Face recognition</li>
+                                    <li>Voice recognition</li>
+                                </ul>
+                            </li>
+                            <li>Used in a number of applications as a security device </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "vtabs">
+                <input type = "radio" name="vtab" id ="tab1"checked>
+                <label for= "tab1">Fingerprint Scans</label>
+
+                <input type = "radio" name="vtab" id ="tab2" >
+                <label for= "tab2">Signature Recognition</label>
+
+                <input type = "radio" name="vtab" id ="tab3">
+                <label for= "tab3">Retina Scans</label>
+
+                <input type = "radio" name="vtab" id ="tab4">
+                <label for= "tab4">Iris Recognition</label>
+
+                <input type = "radio" name="vtab" id ="tab5">
+                <label for= "tab5">Face Recognition</label>
+
+                <input type = "radio" name="vtab" id ="tab6">
+                <label for= "tab6">Voice Recognition</label>
+
+                <input type = "radio" name="vtab" id ="tab7">
+                <label for= "tab7">Comparison of six common biometric techniques </label>
+
+                <input type = "radio" name="vtab" id ="tab8">
+                <label for= "tab8">Comparison of the Pros and Cons of the Six Common Biometric Techniques </label>
+
+            <div class = "vtab-content">
+                <div id = "content1">
+                    <h3>Fingerprint Scans</h3>
+                    <ul class = "list1">
+                        <li>Images of fingerprints are compared against previously scanned fingerprints stored in a database; if they match then access is allowed</li>
+                        <li>The system compares patterns of ‘ridges’ and ‘valleys’, which are fairly unique </li>
+                    </ul>
+                    <iframe class = "vid" width="500" height="300" src="https://www.youtube.com/embed/oCY5sPkkaTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div id = "content2">
+                    <h3>Signature Recognition</h3>
+                    <p class = "des"><em>Example of behavioral biometrics that identifies a person based on their handwriting</em></p>
+                    <ul class = "list1">
+                        <li>There are two different ways in which it operates: 
+                            <ul class = "list2">
+                                <li><strong>Static: </strong><br>
+                                    <ul class = "list3">
+                                        <li>Users write their signature on paper</li>
+                                        <li>After signing, it is digitalised through an optical scanner or a camera to turn the signature image into bits</li>
+                                        <li>The biometric system recognises the signature and analyzing its shape</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Dynamic: </strong><br>
+                                    <ul class = "list3">
+                                        <li>Users write their signature on digitising tablet</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id = "content3">
+                    <h3>Retina Scans</h3>
+                    <ul class = "list1">
+                        <li>Use infrared light to scan the unique pattern of blood vessels in the retina </li>
+                        <li>Requires a person to sit for 10 to 15 seconds while the scan takes place</li>
+                        <li>Secure as nobody has found a way to duplicate blood vessels patterns </li>
+                    </ul>
+                </div>
+
+                <div id = "content4">
+                    <h3>Iris Recognition</h3>
+                    <ul class = "list1">
+                        <li>Process of using visible and near-infrared light to take a high-contrast photograph of a person’s iris</li>
+                        <li>A form of biometric technology in the same category as face recognition and fingerprinting</li>
+                    </ul>
+                    <iframe class = "vid" width="560" height="315" src="https://www.youtube.com/embed/fHS0nq13yPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div id = "content5">
+                    <h3>Face Recognition </h3>
+                    <ul>
+                        <li>A way of recognising a human face through technology</li>
+                        <li>Uses biometrics to map facial features from a photograph or videos and compares the information with a database of known faces to find a match</li>
+                    </ul>
+                    <iframe class = "vid" width="560" height="315" src="https://www.youtube.com/embed/agGEDdj05U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div id = "content6">
+                    <h3>Voice Recognition </h3>
+                    <ul class = "list1" id = "c3list">
+                        <li>Process of converting a voice into digital data</li>
+                        <li>Works by scanning the speech and establishing a match with the desired voice fingerprint</li>
+                    </ul>
+                    <iframe class = "vid" width="560" height="315" src="https://www.youtube.com/embed/AWWjN1QqoYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div id = "content7">
+                    <h3>Comparison of six common biometric techniques</h3>
+                    <table>
+                        <tr>
+                            <th>Biometic Technique</th>
+                            <th>Comparative Accuracy</th>
+                            <th>Comparative cost</th>
+                            <th>Devices Needed</th>
+                            <th>Social Acceptability</th>
+                            <th>What can interfere with the procedure</th>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Fingerprint Scans</td>
+                            <td>High Accuracy</td>
+                            <td>Medium</td>
+                            <td>Scanner</td>
+                            <td>Medium</td>
+                            <td>Damaged fingers</td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Signature Recognition</td>
+                            <td>Low Accuracy</td>
+                            <td>Medium</td>
+                            <td>Optical Pen</td>
+                            <td>High</td>
+                            <td>Signatures can change with time</td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Retina Scans</td>
+                            <td>Low Accuracy</td>
+                            <td>High</td>
+                            <td>Digital Camera</td>
+                            <td>Low</td>
+                            <td>Irritation of eye</td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Iris Recognition</td>
+                            <td>High Accuracy</td>
+                            <td>High</td>
+                            <td>Digital Camera</td>
+                            <td>Low</td>
+                            <td>Wearing of glasses</td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Face Recognition</td>
+                            <td>Medium - low Accuracy</td>
+                            <td>Medium</td>
+                            <td>Digital Camera</td>
+                            <td>High</td>
+                            <td>Facial mask or glasses </td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Voice Recognition</td>
+                            <td>Medium Accuracy</td>
+                            <td>Medium</td>
+                            <td>Microphone</td>
+                            <td>High</td>
+                            <td>Background noise or person has a cold</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id = "content8">
+                    <h3>Comparison of the Pros and Cons of the Six Common Biometric Techniques </h3>
+                    <table style = "width: 690px; ">
+                        <tr>
+                            <th>Biometic Technique</th>
+                            <th>Pros</th>
+                            <th>Cons</th>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Fingerprint Scans</td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Most developed </li>
+                                    <li>Very high accuracy</li>
+                                    <li>Easy to use</li>
+                                    <li>Small storage requirements for the biometric data created</li>
+                                    <li>Everybody's fingerprints are unique (secure - difficult to replicate a person's fingerprint)</li>
+                                    <li>Other security devices can be lost or stolen</li>
+                                    <li>Impossible to sign in for somebody else</li>
+                                    <li>Can't be misplaced</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Can be intrusive - related to criminal identification</li>
+                                    <li>Can make mistakes if the skin is damaged</li>
+                                    <li>Expensive to install and set up </li>
+                                    <li>If a person’s fingers are damaged through an injury, this can have an effect on the scanning accuracy</li>
+                                    <li>May regard it as an infringement of civil liberties </li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Signature Recognition</td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Non-intrusive</li>
+                                    <li>Requires very little time to verify</li>
+                                    <li>Low-cost tech</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>There may be problems with signature verification if the user does not sign names in consistent manner </li>
+                                    <li>High error rate</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Retina Scans</td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Very high accuracy</li>
+                                    <li>No known way to replicate a person’s retina </li>                                
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Very intrusive</li>
+                                    <li>Can be relatively slow to verify retina scan with stored scans </li>
+                                    <li>Very expensive to install and set up</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Iris Recognition</td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Very high accuracy</li>
+                                    <li>Verification time is generally less than five seconds </li>                                
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Very intrusive</li>
+                                    <li>Uses a lot of memory for the data to be stored</li>
+                                    <li>Very expensive to install and set up</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Face Recognition</td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Non-intrusive</li>
+                                    <li>Relatively inexpensive tech </li>                                
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Affected by changes in lighting, the person’s hair, their age, and if the person is wearing glasses</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class = "th2">Voice Recognition</td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>Non-intrusive</li>
+                                    <li>Verification takes little time </li>  
+                                    <li>Relatively inexpensive tech</li>                         
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class = "list1 td2">
+                                    <li>A person’s voice can be record easily and used for unauthorised access</li>
+                                    <li>Low accuracy</li>
+                                    <li>An illness, such as cold, can change a person’s voice, making absolute identification difficult or impossible </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div><!--vtabs-->
+    </div>
+
+    <div class = "group">
+        <img src = "images/credit.png" class = "icon" id = "icon1" style = "left: 240px"><img src = "images/credit.png" class = "icon" id = "icon2" style = "right: 240px"><h3>Online Credit Fraud </h3>
+            <div class="accordionMenu">
+                <!-- 1st menu  -->
+                <input type="radio" name="trg1" id="acc14" checked="checked">
+                <label for="acc14">Reasons</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Hackers gaining access to a user’s computer through the use of spyware, phishing, or pharming 
+                                <ul class = "list2">
+                                    <li>The user can be tricked into giving personal and financial details that enable the hacker to gain full access to a user’s account </li>
+                                    <li>Can lead to unauthorised purchases or removal of money </li>
+                                </ul>
+                            </li>
+                            <li>Breaking of passwords through techniques
+                                <ul class = "list2">
+                                    <li>Weak passwords</li>
+                                    <li>No encryption used </li>
+                                </ul>
+                            </li>
+                            <li>Better to type a web address or URL rather than copy and paste since a web address or URL can be altered very slightly in the email and the user might end up visiting a fake website </li>
+                            <li>Not setting up a password when using wireless technology
+                                <ul class = "list2">
+                                    <li>Easy to tap into wireless networks without password protection </li>
+                                </ul>
+                            </li>
+                            <li>Logging into an account or website in a public place 
+                                <ul class = "list2">
+                                    <li>Always a risk that somebody is monitoring internet usage in the area and try to tap into the data </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 2nd menu -->
+                <input type="radio" name="trg1" id="acc15">
+                <label for="acc15">Precautions</label>
+                <div class="content">
+                    <div class="inner">
+                        <ul class = "list1">
+                            <li>Always use varied and complex passwords </li>
+                            <li>Check the accuracy of bank accounts continually </li>
+                            <li>Only provide personal info on sites that have ‘https’ in the web address or have a padlock icon in the web browser </li>
+                            <li>Don’t provide personal information to any unsolicited requests for info </li>
+                            <li>Don’t open emails or attachments from unknown senders </li>
+                            <li>Delete any messages from your spam folder on a regular basis</li>
+                            <li>Report any suspicious phishing activity to the company that is used by the perpetrator </li>
+                            <li>Only download software from sites that can be trusted </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="group">
+            <img src = "images/cloud-storage.png" class = "icon" id = "icon1" style = "left: 290px"><img src = "images/cloud-storage.png" class = "icon" id = "icon2" style = "right: 290px"><h3>Cloud Security </h3>
+                <div class="accordionMenu">
+                    <!-- 1st menu  -->
+                    <input type="radio" name="trg1" id="acc16" checked="checked">
+                    <label for="acc16">Pros of Cloud Security</label>
+                    <div class="content">
+                        <div class="inner">
+                            <ul class = "list1">
+                                <li>Don’t need to carry memory sticks around when you want to access your files away from home</li>
+                                <li>Don’t have to pay for large storage capacity on electronic devices</li>
+                                <li>Because the cloud is controlled by external companies, they will ensure that your files are backed up and therefore reduce the possibility of losing irreplaceable data</li>
+                                <li>The ability to synchronise files sure they are automatically updated across all devices </li>
+                                <li>Ideal for collaboration purposes; allows several users to edit and collaborate on a single file or document</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 2nd menu -->
+                    <input type="radio" name="trg1" id="acc17">
+                    <label for="acc17">Data Security</label>
+                    <div class="content">
+                        <div class="inner">
+                            <ul class = "list1">
+                                <li>Companies that transfer vast amounts of confidential data from their own systems to a cloud service provider are effectively relinquishing control of their own data security, raising a number of questions: 
+                                    <ul class = "list2">
+                                        <li>What physical security exists regarding the building where the data is housed? </li>
+                                        <li>How good is the cloud service provider’s resistance to natural disasters or power cuts?</li>
+                                        <li>What safeguards exist regarding personnel who work for the cloud service company? Can they use their authorisation codes to access confidential data for monetary purposes? </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 3rd menu -->
+                    <input type="radio" name="trg1" id="acc18">
+                    <label for="acc18">Data Loss</label>
+                    <div class="content">
+                        <div class="inner">
+                            <ul class = "list1">
+                                <li>There is a risk that important and irreplaceable data could be lost from cloud storage facilities</li>
+                                <li>Actions from hackers could lead to loss or corruption of data 
+                                    <ul class = "list2">
+                                        <li>Users need to be certain sufficient safeguards exist to overcome these potentially very harmful risks </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="8.3.html" class="button2" style = "bottom: 30px; " id = "bt">&#8249;</a>
+        </body>
+    </main>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>7.5 Documentation</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style>
+        
+        .column {
+            float: left; 
+            left: 50%; 
+            margin-left: 50px; 
+        }
+
+        .column2 {
+            float: right; 
+            right: 50%;
+            margin-right: 50px; 
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 581px;
+            height: 630px;
+            border: 2px double purple;
+            perspective: 1000px; /* 3D effect */
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+        }
+
+        /* Front side */
+        .flip-card-front {
+            background-color: rgb(236, 203, 255);
+            color: black;
+        }
+
+        /* Back side */
+        .flip-card-back {
+            background-color: rgb(210, 197, 255);
+            color: black;
+            transform: rotateY(180deg);
+        }
+
+        body {
+            overflow-y: scroll;
+        }
+
+        .list3 {
+            padding-left: 20px; 
+            padding-top: 10px; 
+            font-size: 15px; 
+            line-height: 20px; 
+            list-style-type: disc; 
+        }
+
+        .list4 {
+            padding-left: 20px; 
+            font-size: 15px; 
+            list-style-type: circle;
+            line-height: 30px; 
+        }
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a class = "active" href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2" id = "top">
+            <h1 class = "heading">CHAPTER 7.5: DOCUMENTATION</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+
+            <div class = "card">
+                <h3 id = "card-t">What is the Documentation Stage?</h3>
+                <p id = "card-c"> Once the new system is fully developed, a considerable amount of documentation also needs to be produced for:
+                    <ul class = "list1">
+                        <li>The end-user</li>
+                        <li>People who may need to modify or develop the system further at some later stage</li>
+                    </ul>
+                </p>
+            </div>
+        <div class = "row">
+            <div class = "column">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 style = "text-align: center; font-size: 30px;">User Documentation</h3>
+                        </div> 
+                        <div class="flip-card-back">
+                            <p>
+                                <ul class = "list3">
+                                    <li>Designed to help users to learn how to use the software or system</li>
+                                    <li>Can be consisted into: 
+                                        <ul class = "list4">
+                                            <li>How to load/install/run the software</li>
+                                            <li>How to save files</li>
+                                            <li>How to do a search</li>
+                                            <li>How to sort data</li>
+                                            <li>How to do printouts</li>
+                                            <li>How to add, delete or amend records </li>
+                                            <li>The purpose of the system/program/software package</li>
+                                            <li>Limitations of the system</li>
+                                            <li>Screen layout (input format) </li>
+                                            <li>Print layouts (output format) </li>
+                                            <li>Hardware requirements </li>
+                                            <li>Software requirements</li>
+                                            <li>Sample runs (with results and actual test data used) </li>
+                                            <li>Error handling/meaning of errors</li>
+                                            <li>Troubleshooting guide/helplines/FAQs</li>
+                                            <li>How to log in/log out</li>
+                                            <li>Tutorials </li>
+                                            <li>Error messages/meaning of error messages </li>
+                                            <li>Glossary of terms </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+              </div>
+            </div>
+            <div class = "column2">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 style = "text-align: center; font-size: 30px;">Technical Documentation</h3>
+                        </div> 
+                        <div class="flip-card-back">
+                            <p>
+                                <ul class = "list3">
+                                    <li>Designed to help programmers/analysts to make improvements to the system or to repair/maintain the system</li>
+                                    <li>Can be consisted into: 
+                                        <ul class = "list4">
+                                            <li>Program listing/coding</li>
+                                            <li>Programming language used</li>
+                                            <li>Program flowcharts/algorithms </li>
+                                            <li>Systems flowcharts</li>
+                                            <li>Purpose of the system/program/software</li>
+                                            <li>Limitations of the system</li>
+                                            <li>Input formats</li>
+                                            <li>Hardware requirements </li>
+                                            <li>Software requirements</li>
+                                            <li>Minimum memory requirements</li>
+                                            <li>Known ‘bugs’ in the system</li>
+                                            <li>List of variables used (and their meaning/description)</li> 
+                                            <li>File structures</li>
+                                            <li>Sample runs (with results and actual test data used) </li>
+                                            <li>Output formats</li>
+                                            <li>Validation rules</li>
+                                            <li>Meaning of error messages</li>                                   
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="7.6.html" class="button" style = "margin-top: 10px;">&#8250;</a>
+        <a href="7.4.html" class="button2" style = "margin-top: 10px;">&#8249;</a>
+    </body>
+    </main>
+</html>

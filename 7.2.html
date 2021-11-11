@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>7.2 Design</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style>
+            .steps ul li {
+                list-style-type: upper-roman;
+            }
+
+            .steps {
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8;           
+                padding: 5px; 
+                margin-left: 50px; 
+                margin-right: 50px; 
+                margin-bottom: 30px; 
+            }
+
+            .steps ul {
+                margin-left: 30px; 
+            }
+
+            body {
+                overflow: scroll; 
+            }
+
+            .parallax {
+            background-color: #fad4e1; 
+            padding: 30px;
+            min-height: 350px; 
+            background-attachment: fixed;
+            background-position: center; 
+            background-repeat:no-repeat; 
+            background-size: cover; 
+            line-height: 30px;
+        }
+
+        .parallax-2 {
+            background-color: #fcd1eb; 
+            padding: 30px;
+            min-height: 350px; 
+            background-attachment: fixed;
+            background-position: center; 
+            background-repeat:no-repeat; 
+            background-size: cover; 
+            line-height: 30px;
+        }
+
+        .parallax-3 {
+            background-color:#f3d5ed; 
+            padding: 30px;
+            min-height: 350px; 
+            background-attachment: fixed;
+            background-position: center; 
+            background-repeat:no-repeat; 
+            background-size: cover; 
+            line-height: 30px;
+        }
+
+        .imgcard {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center; 
+        }
+        
+        .parallax-4 {
+            background-color: #f3cefd; 
+            padding: 30px;
+            min-height: 250px; 
+            background-attachment: fixed;
+            background-position: center; 
+            background-repeat:no-repeat; 
+            background-size: cover; 
+            line-height: 30px;
+        }
+
+        .parallax-5 {
+            background-color: #e7cdf5; 
+            padding: 30px;
+            min-height: 250px; 
+            background-attachment: fixed;
+            background-position: center; 
+            background-repeat:no-repeat; 
+            background-size: cover; 
+            line-height: 30px;
+        }
+
+        
+        .table {
+            border: 1px solid #aadeeb; 
+            border-collapse: collapse; 
+            font-size: 15px; 
+        }
+
+        th, td {
+            padding: 10px; 
+        }  
+
+        th {
+            background-color: #cda1ff;
+            color: black;
+        }
+
+        td {
+            text-align: left; 
+            padding: 5px; 
+            line-height: 25px; 
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        .parallax-6 {
+            background-color: #dfceeb; 
+            padding: 30px;
+            min-height: 250px; 
+            background-attachment: fixed;
+            background-position: center; 
+            background-repeat:no-repeat; 
+            background-size: cover; 
+            line-height: 30px;
+        }
+
+        .parallax-7 {
+            background-color: #dcc5ec; 
+            padding: 30px;
+            min-height: 250px; 
+            background-attachment: fixed;
+            background-position: center; 
+            background-repeat:no-repeat; 
+            background-size: cover; 
+            line-height: 30px;
+        }
+
+        .p-content {
+            padding-left: 30px; 
+        }
+
+        .eg {
+            font-size: 13px;
+        }
+
+        #toc_container {
+            background:  #d9d8ec none repeat scroll 0 0;
+            border: 1px solid #aaa;
+            display: table;
+            font-size: 95%;
+            margin-bottom: 1em;
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            position: relative;  
+            right: 50%; 
+            left: 35%;
+            text-decoration: underline;
+            }
+
+            .toc_title {
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 25px; 
+            padding-bottom: 10px; 
+            text-align: center;
+            }
+
+            a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            color: black;
+            text-decoration: underline;
+            }
+
+            a:hover {
+            background-color: whitesmoke;
+            color: #7976a8;
+            }
+
+            #bt {
+                margin: 10px; 
+                margin-left: 30px; 
+                margin-right: 30px; 
+            }
+
+            .toc_list li a {
+                color: purple; 
+                font-weight: bold; 
+            }
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "homepage.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a class = "active" href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2" id = "top">
+            <h1 class = "heading">CHAPTER 7.2: DESIGN</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+
+            <div class = "card" style = "text-align: center;" >
+                <h3 id = "card-t" >What is Design Stage?</h3>
+                <p id = "card-c" style = "text-align: center;"> Once the analysis has taken place and the systems analyst has some idea of the scale of the problem and what needs to be done, the next step is to design the key parts of the recommended system </p>
+            </div>
+                <div class = "steps">
+                <h3>Tasks to be done in the Design Stage</h3> 
+                    <ul style = "padding: 10px; top:100px; line-height: 30px; ">
+                        <li>Design the data capture forms/input forms</li>
+                        <li>Design the screen layouts 
+                        <li>Design outputs in the form of screen displays and printed reports 
+                        <li>Produce systems flowcharts and/or pseudo code
+                        <li>Select/design validation rules that need to be used
+                        <li>Design/agree on file structures 
+                        <li>Produce any algorithms or program flowcharts 
+                        <li>Design a testing strategy/plan 
+                    </ul> 
+                </div>
+            
+                <div id="toc_container" style =" color: purple;">
+                    <p class="toc_title">Contents in this page</p>
+                    <ul class="toc_list list1" style = "list-style-type: upper-roman;">
+                        <li><a href = "#datacaptureforms">Data Capture Forms</a></li>
+                        <li><a href = "#screendisplay">Screen displays and printed reports</a></li>
+                        <li><a href = "#flowchart">System Flowcharts</a></li>
+                        <li><a href = "#verification">Verification</a></li>
+                        <li><a href = "#validation">Validation</a></li>
+                        <li><a href = "#filestructure">File Structures</a></li>
+                        <li><a href = "#design&" >Design and testing strategy/plan</a></li>
+                    </ul>
+                    </div>
+
+                <div class = "parallax">
+                    <h3 class = "p-content" id = "datacaptureforms">Data Capture Forms</h3> 
+                    <ul style = "padding-left: 50px; font-size: 15px;" class = "p-content">
+                        <li>Allows the data to be input into the system </li>
+                        <li>Either paper-based or electronic-based depending on the application</li>
+                        <li>Paper-based forms need to:
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle;" class = "p-content">
+                                <li>Have a heading to make the purpose of the form clear </li>
+                                <li>Make it clear to the person filling in the form where they must place their answers </li>
+                                <li>Make use of text boxes, which will limit the amount of information collected </li>
+                                <li>Make use of character boxes for data such as surnames, telephone numbers, and so on (each box allows one character only) </li>
+                                <li>Make use of printed text boxes to allow for easy input of items such as date of birth</li>
+                                <li>Make use of tick boxes to make choices easier (such as sex - male or female) </li>
+                                <li>Make sure there is sufficient space to write answers</li>
+                                <li>Use clear fonts and clear text colours to ensure the form is easy to read </li>
+                            </ul>
+                        </li>
+                        <li>A computer-based data capture form is slightly different and has the following features: 
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle; " class = "p-content">
+                                <li>Use of text boxes to capture key data clearly</li>
+                                <li>Use of on-screen help when completing the form</li>
+                                <li>Use of drop-down/combo boxes where there are limited choices</li>
+                                <li>Use of radio buttons and tick boxes, requiring a single click of a mouse to select</li>
+                                <li>Automatic validation of data as it is entered</li>
+                                <li>Control buttons (such as next form, clear entry, save, etc)</li>
+                                <li>Double-entry boxes (with verification rules) to check the correctness of key data (for example, when keying in an email address)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class = "parallax-2">
+                    <h3 class = "p-content" id = "screendisplay">Screen displays and printed reports</h3>
+                    <ul style = "padding-left: 50px; font-size: 15px;" class = "p-content"> 
+                        <li>The output from any system needs careful consideration since this is part of any user interface and is also the result of some form of processing</li>
+                        <li>Screen outputs should be designed to make sure the size of all the output fields is correct so that:
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle;" class = "p-content">
+                                <li>Any instructions/descriptions are clear</li>
+                                <li>The full screen is utilised (avoiding large areas of ‘nothing)</li>
+                                <li>Colours and fonts (size and type)) make the output clear</li>
+                            </ul>
+                        </li>
+                        <li >Reports should:
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle;" class = "p-content">
+                                <li>Clearly show all the fields that were included in the search criteria </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class = "parallax-3">
+                    <h3 class = "p-content" id = "flowchart">System flowcharts</h3>
+                    <ul style = "padding-left: 50px; font-size: 15px; " class = "p-content">
+                        <li>Used to show how data flows through a system and also how decisions are made</li>
+                        <li>Make use of special symbols that represent input/output, processing, decisions, and data storage</li>
+                        <li>System analysts use these charts to give an overall view of the proposed system 
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle; " class = "p-content">
+                                <li>Do not form the basis of a flowchart from which software can be written but they do show the processes are carried out and where various hardware devices are used in the system</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class = "imgcard">
+                        <img src = "images/imgcard.png" alt = "Example of flow chart" style = "width: 300px">
+                        <p>Example of flow chart</p>
+                    </div>
+                </div>
+                <div class = "parallax-4">
+                    <h3 class = "p-content" id = "verification">Verification </h3>
+                    <ul style = "padding-left: 50px; font-size: 15px;">
+                        <li>A way of preventing errors when data is copied from one medium to another (for example, from paper to disk/CD). - whether the data matches the form </li>
+                        <li>Two common ways that verification checks are carried out: 
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle;" class = "p-content"> 
+                                <li><strong>Double-entry: </strong> data is entered twice, using two people, and is them compared</li>
+                                <li><strong>Visual check: </strong> checking for errors by the person who is entering the data; compare the entered data with the original document (proof-reading) </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "parallax-5">
+                    <h3 class = "p-content" id = "validation">Validation</h3>
+                    <ul class = "p-content">
+                        <li>A process where data is checked to see if it satisfies certain criteria when input into a computer, for example, to see if the data falls within accepted boundaries </li>
+                        <li>Types of validation checks: 
+                            <table class = "table p-content">
+                                <tr>
+                                    <th><strong>Validation Check</strong></th>
+                                    <th><strong>Description</strong></th>
+                                </tr>
+                                <tr>
+                                    <td><strong>Range check</strong><br>
+                                    <p class = "eg">E.g. A person’s age should be in the range > 0 but &lt; 150 </p> </td>
+                                    <td>Checks whether data is within given/acceptable values</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Look-up Check</strong></td>
+                                    <td>Checks whether the data entered exists and is stored in a table of data</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Length check</strong><br><p class = "eg">E.g. If a field needs six digits then inputting a five- or seven-digit number, for example, should cause an error message</p></td>
+                                    <td>Checks if the input data contains the required number of characters </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Character/type check</strong></td>
+                                    <td>Checks that the input data doesn’t contain invalid characters </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Format/picture check</strong> <br> <p class = "eg">E.g. Date should be in the form dd/mm/yyyy</p></td>
+                                    <td>Checks that data is in a specific format</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Presence Check</strong><br><p class = "eg">E.g. In an electronic form, a person’s telephone number may be a required field and if no data is present this should give rise to an error message</p></td>
+                                    <td>Checks if data is actually present and hasn’t been missed out</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Consistency Check</strong><br><p class = "eg">E.g. If ‘Mr’ has been typed into a field called title then the gender field must contain either ‘M’ or ‘Male'</p></td>
+                                    <td>Checks if fields correspond (tie-up) with each other </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Check Digit</strong><br><p class = "eg">E.g. Check digits can identify three types of error:
+                                        <ul style = "padding-left: 15px; font-size: 15px; list-style-type: disc; font-size: 13px;" >
+                                            <li>If two digits have been inverted during input</li>
+                                            <li>An incorrect digit entered twice</li>
+                                            <li>A digit missed out altogether</li>
+                                        </ul>
+                                    </p></td>
+                                    <td>This is an extra digit added to a number which is calculated from the digits
+                                        <ul style = "padding-left: 15px; font-size: 15px; list-style-type: disc;">
+                                            <li>Can identify three types of error: 
+                                                <ul style = "padding-left: 15px; font-size: 15px; list-style-type: circle;">
+                                                    <li>If two digits have been transposed during input</li>
+                                                    <li>An incorrect digit entered twice</li>
+                                                    <li>A digit missed out altogether </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "parallax-6">
+                    <h3 class = "p-content" id = "filestructure">File structures </h3>
+                    <ul style = "padding-left: 50px; font-size: 15px;" class = "p-content">
+                        <li>Designing and agreeing file structures is an important part of the design stage</li>
+                        <li>Used in the files need to take the following into account: 
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle;" class = "p-content">
+                                <li>Field Length</li>
+                                <li>Field Name (suitable names should be chosen) </li>
+                                <li>Data Type</li>
+                            </ul>
+                        </li>
+                        <li>The data dictionary can be used to show suitable field names</li>
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle;" class = "p-content"></ul>
+                                    <table class = "table" class = "p-content">
+                                        <tr>
+                                            <th>Field Name</th>
+                                            <th>Field Length</th>
+                                            <th>Field Type</th>
+                                            <th>Suitable Validation Check</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Product_code</td>
+                                            <td>8</td>
+                                            <td>Alphanumeric</td>                                            <td>Length Check</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Manufacture_year</td>
+                                            <td>4</td>
+                                            <td>Numeric</td>
+                                            <td>Range Check</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Product_name</td>
+                                            <td>20</td>
+                                            <td>Alphanumeric</td>
+                                            <td>None</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location_of_stock</td>
+                                            <td>4</td>
+                                            <td>Numeric</td>
+                                            <td>Character Check</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Colour</td>
+                                            <td>2</td>
+                                            <td>Alphanumeric</td>
+                                            <td>Look-up Check</td>
+                                        </tr>
+                                    </table>
+                    </ul>
+                </div>
+                <div class = "parallax-7">
+                    <h3 class = "p-content" id = "design&">Design and testing strategy/plan</h3>
+                    <ul style = "padding-left: 50px; font-size: 15px; " class = "p-content">
+                        <li>When producing the software for the new system, it is very important to test it thoroughly in order to: 
+                            <ul style = "padding-left: 50px; font-size: 15px; list-style-type: circle; " class = "p-content">
+                                <li>Make sure it meets the agreed client requirements</li>
+                                <li>Remove any bugs/errors from the system</li>
+                                <li>Make sure it produces the required output for data where the correct output is already known</li>
+                                <li>Check that the software doesn’t crash under certain conditions </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <a href="7.3.html" class="button" id = "bt">&#8250;</a>
+                <a href="7.1.html" class="button2" id = "bt">&#8249;</a>
+        </body>
+    </main>
+</html>

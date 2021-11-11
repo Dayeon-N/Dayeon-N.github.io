@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>8.2 E-Safety</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style>
+            article.tabs {
+                position: relative;
+                display: block;
+                width: 70em;
+                margin: 2em auto; 
+                max-width: 900px; 
+                height: 360px; 
+            }
+
+            article.tabs section {
+                position: absolute;
+                display: block;
+                top: 1.8em;
+                left: 0;
+                right: 0;
+                height: 14em;
+                padding: 10px 20px;
+                background-color: #d9d8ec;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px 0 rgba(84, 61, 85, 0.61);
+                z-index: 1;
+                color: black;
+                line-height: 25px; 
+            }
+
+            article.tabs section .tab-content { 
+                display: none;
+             }
+
+            article.tabs section:last-child {
+                z-index: 2;
+                color: black;
+                background-color: #d9d8ec;
+            }
+
+            article.tabs section:last-child .tab-content { 
+                display: block; 
+            }
+
+            article.tabs section h2 {
+                position: absolute;
+                font-size: 1em;
+                font-weight: normal;
+                width: 200px;
+                height: 1.8em;
+                top: -1.8em;
+                left: 10px;
+                padding: 0;
+                margin: 0;
+                color: black;
+                background-color: white;
+                border-radius: 5px 5px 0 0;
+            }
+
+            article.tabs section:last-child h2 {
+                color: black;
+                background-color: #d9d8ec;
+            }
+
+            article.tabs section:nth-child(1) h2 { 
+                left: 210px; 
+            }
+
+            article.tabs section:nth-child(2) h2 { 
+                left: 410px;
+             }
+
+            article.tabs section h2 a {
+                display: block;
+                width: 100%;
+                line-height: 1.8em;
+                text-align: center;
+                text-decoration: none;
+                color: inherit;
+                outline: 0 none;
+            }
+
+            article.tabs section:target, article.tabs section:target h2 {
+                color: black;
+                background-color: #d9d8ec;
+                z-index: 3;
+            }
+
+            article.tabs section:target .tab-content { display: block; }
+
+            article.tabs section:target ~ section:last-child h2 {
+                color: black;
+                background-color: white;
+            }
+
+            article.tabs section:target ~ section:last-child .tab-content { 
+                display: none; 
+            }
+
+            body {
+                overflow-y: scroll;
+                overflow-x: scroll;
+            }
+
+            .issues {
+                position: relative; 
+                margin-bottom: 30px; 
+                bottom: 110px; 
+                padding: 15px; 
+                height: 300px; 
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8; 
+                line-height: 30px; 
+                overflow-y: scroll;
+                margin-left: 50px; 
+                margin-right: 50px; 
+            }
+
+            .risks {
+                position: relative; 
+                margin-bottom: 30px; 
+                bottom: 70px; 
+                padding: 15px; 
+                background-color: #d9d8ec;
+                border: solid 2px #7976a8; 
+                line-height: 30px; 
+                margin-left: 50px; 
+                margin-right: 50px; 
+            } 
+
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container" style = "z-index: 4;">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a class = "active" href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2">
+            <h1 class = "heading">CHAPTER 8.2: E-SAFETY</h1>
+            <hr style="color:#8785a2">
+            <section></section>
+
+            <article class="tabs">
+                <section id="tab2">
+                  <h2><a href="#tab2">Personal Data </a></h2>
+                  <div class="tab-content">
+                      <ul class = "list1">
+                          <li>Personal data refers to any data concerning a living person who can be identified either from the data itself or from the data in conjunction with other information </li>
+                          <li>Examples: 
+                              <ul class = "list2">
+                                  <li>Name</li>
+                                  <li>Address</li>
+                                  <li>Date of birth</li>
+                                  <li>Medical History</li>
+                                  <li>Banking details</li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>
+                </section>
+                <section id="tab3">
+                  <h2><a href="#tab3">Sensitive Personal Data</a></h2>
+                  <div class="tab-content"> <p>Includes: 
+                      <ul class = "list1">
+                          <li>Ethnic origin</li>
+                          <li>Political views</li>
+                          <li>Religion</li>
+                          <li>Sexual orientation</li>
+                          <li>Criminal activity</li>
+                      </ul>
+                      </p>
+                  </div>
+                </section>
+                <section id="tab1">
+                  <h2><a href="#tab1">Definition of E-safety</a></h2>
+                  <div class="tab-content">E-safety refers to safety when using the internet 
+                </div>
+                </section>
+              </article>
+
+              <div class = "issues">
+                  <h3>E-Safety Issues that can be encountered by users </h3>
+                  <ul class = "list1">
+                      <li>Don’t give out any personal information to people who are unknown to you </li>
+                      <li>Don’t send people photos of yourself </li>
+                      <li>Always maintain your privacy settings on whatever device is being used online or during communications 
+                          <ul class = "list2">
+                              <li>Privacy settings allow the user to control which cookies are stored on their computer or enable the user to decide who can view certain information </li>
+                          </ul>
+                      </li>
+                      <li>When accessing the internet, make sure the websites being visited can be trusted 
+                          <ul class = "list2">
+                              <li>HTTPS or the padlock sign </li>
+                              <li>When using search engines, always make sure the device settings are set to ‘safe search’ and the highest possible level of security is used </li>
+                          </ul>
+                      </li>
+                      <li>Only use websites recommended by teachers and only use a learner-friendly search engine </li>
+                      <li>Only open emails from known sources 
+                          <ul class = "list2">
+                              <li>Make sure ISP has an effective email filtering feature to ensure unknown emails are placed in the spam box </li>
+                          </ul>
+                      </li>
+                      <li>Be vigilant when using social networking sites
+                          <ul class = "list2">
+                              <li>Block or report anybody who acts suspiciously or who uses inappropriate language</li>
+                              <li>Be very careful with the language used in chat rooms </li>
+                              <li>Always use a nickname </li>
+                              <li>Keep private and personal data secret</li>
+                              <li>Don’t enter private chat rooms - stay public </li>
+                              <li>Never arrange to meet anyone for the first time on your own </li>
+                              <li>Always tell an adult first and meet the person in a public place </li>
+                              <li>Avoid the misuse of images</li>
+                              <li>Always use appropriate language</li>
+                              <li>Always respect people’s confidentiality </li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+
+              <div class = "risks">
+                  <h3>Potential Risks When Playing Online Games</h3>
+                  <ul class = "list1 ">
+                      <li>Violence in the game itself - can lead to violent behaviour in reality </li>
+                      <li>Predators (people who prey on others who they see as vulnerable) </li>
+                      <li>Cyberbullying </li>
+                      <li>Use of webcams </li>
+                      <li>Voice-masking technology (to disguise a voice so you can’t tell their sex or age, or even their accent) </li>
+                      <li>Cyberattacks 
+                          <ul class = "list2">
+                              <li>Viruses </li>
+                              <li>Phishing</li>
+                              <li>Spyware</li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
+              <a href="8.3.html" class="button" style = "bottom: 50px; ">&#8250;</a>
+              <a href="8.1.html" class="button2" style = "bottom: 50px; ">&#8249;</a>
+        </body>
+    </main>
+</html>

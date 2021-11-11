@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>About Us</title>
+        <link rel ="stylesheet" href = "menu.css">
+        <link rel ="stylesheet" href = "ch7and8.css">
+        <style> 
+            body {
+                background-color: rgb(227, 217, 250); 
+                overflow-y: scroll;
+                overflow-x: scroll;
+            }
+            .column {
+            float: left;
+            width: 50%;
+            padding: 0 50px; 
+            margin: 10px 20px;
+            position: relative;
+            top: 50px; 
+            width: 60%;
+            }
+            
+            .one {
+            display: inline-block;
+            border: 5px solid #6d66d6;
+            background-color: #c2c0e0;
+            margin-left: 130px;
+            }
+
+            .two {
+            display: inline-block;
+            border: 5px solid #6d66d6;
+            background-color: #c2c0e0;
+            margin-right: 90px;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            .row {
+            display: flex;
+            }
+
+            .column {
+            flex: 50%;
+            }
+
+            .contact {
+            font-family: Verdana, Geneva, Tahoma, sans-serif; 
+            left: 30%; 
+            right: 50%;
+            margin: auto; 
+            position: relative; 
+            top: 100px;
+            }
+
+            .button:hover {
+                background-color: whitesmoke;
+                color: purple; 
+                transition: 0.5s ease-in-out; 
+            }
+
+            .button2:hover {
+                background-color: whitesmoke;
+                color: purple; 
+                transition: 0.5s ease-in-out; 
+            }
+
+        </style>
+    </head>
+    <main>
+        <body>
+            <input type = "checkbox" name ="" id="check">
+            <div class = "container">
+                <label for="check">
+                    <span class="hitimes" id="times"></span>
+                    <span class="hibars" id="bars"></span>
+                </label>
+                 <div class = "head">Menu</div>
+                 <ol>
+                     <li><a href = "index.html"><i class = "home"></i>Home</a></li>
+                     <li class = "active"><a href = "aboutpage.html"><i class = "about"></i>About Us</a></li>
+                  </ol>
+                     <div class = "dropdown">
+                        <button class="dropbtn">Chapter 7
+                          <i class = "ch7-down"></i>
+                        </button>
+                        <div class = "dropdown-content">
+                            <a href = "chapter7home.html"><i class = "ch7"></i>Chapter 7 Home</a>
+                            <a href = "7.1.html"><i class = "ch7"></i>7.1 Analysis</a>
+                            <a href = "7.2.html"><i class = "ch7"></i>7.2 Design</a>
+                            <a href = "7.3.html"><i class = "ch7"></i>7.3 Development & Testing</a>
+                            <a href = "7.4.html"><i class = "ch7"></i>7.4 Implementation</a>
+                            <a href = "7.5.html"><i class = "ch7"></i>7.5 Documentation</a>
+                            <a href = "7.6.html"><i class = "ch7"></i>7.6 Evaluation</a>
+                     </div>
+                    </div>
+                    <div class = "dropdown">
+                      <button class="dropbtn">Chapter 8
+                        <i class = "ch8-down"></i>
+                      </button>
+                      <div class = "dropdown-content">
+                          <a href = "chapter8home.html"><i class = "ch8"></i>Chapter 8 Home</a>
+                          <a href = "8.1.html"><i class = "ch8"></i>8.1 Physical Security</a>
+                          <a href = "8.2.html"><i class = "ch8"></i>8.2 E-Safety</a>
+                          <a href = "8.3.html"><i class = "ch8"></i>8.3 Security of Data</a>
+                          <a href = "8.4.html"><i class = "ch8"></i>8.4 Additional Security of Data</a>
+                   </div>
+                  </div>
+            </div>
+            <hr style="color:#8785a2">
+            <h1 class = "heading"> About Us</h1> 
+            <hr style="color:#8785a2">
+            <section></section>
+
+            <div class="row">
+                <div class="column"> 
+                    <div class = "one">
+                        <h1 style = "font-family: monaco, monospace; font-weight: bold; padding: 8px;"> About our webpage</h1>
+                        <p style = "font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 16px; padding: 8px; line-height: 20px; ">This website is to give concise and detailed notes on IGCSE ICT chapter 7: System Life Cycle & chapter 8: Safety and Security. </div>
+                    </div>
+                <div class="column">
+                    <div class = "two">
+                        <h1 style = "font-family: monaco, monospace; font-weight: bold; padding: 8px"> Our aims</h1>
+                        <p style = "font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 16px; padding: 8px">Our aims are to: 
+                            <un>
+                                <li style = "font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 16px; padding: 8px;">Give notes on chapter 7 & 8</li>
+                                <li style = "font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 16px; padding: 8px;">Reduction in time making notes</li>
+                            </un>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "contact" style = "display: inline-block; border: 5px solid #6d66d6; background-color: #c2c0e0; padding: 8px; ">
+                <h2>Contact Details:</h2>
+                <p>Email address: <a href = "mailto:24dayeonnam@lannaist.ac.th">Click here to send emails</a></p>
+            </div>
+            <a href="chapter7home.html" class="button" style = "top: 180px;">&#8250;</a>
+            <a href="index.html" class="button2" style = "top: 180px;">&#8249;</a>
+        </body>
+    </main>
+</html>
